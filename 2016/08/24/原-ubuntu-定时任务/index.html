@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>[原]ubuntu 定时任务 | feison&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.编辑/etc/crontab文件
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# /etc/crontab: system-wide crontab&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# Unlike any other crontab you don&amp;apos;t have">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[原]ubuntu 定时任务">
+<meta property="og:url" content="https://feisonzl.github.io/2016/08/24/原-ubuntu-定时任务/index.html">
+<meta property="og:site_name" content="feison's blog">
+<meta property="og:description" content="1.编辑/etc/crontab文件
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# /etc/crontab: system-wide crontab&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# Unlike any other crontab you don&amp;apos;t have">
+<meta property="og:updated_time" content="2016-10-20T01:29:24.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[原]ubuntu 定时任务">
+<meta name="twitter:description" content="1.编辑/etc/crontab文件
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# /etc/crontab: system-wide crontab&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;# Unlike any other crontab you don&amp;apos;t have">
+  
+    <link rel="alternative" href="/atom.xml" title="feison&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">feison</a></h1>
+		</hgroup>
+
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
+		        
+					<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">feison</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="null" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">feison</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-原-ubuntu-定时任务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [原]ubuntu 定时任务
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.编辑/etc/crontab文件</p>
+<pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;# /etc/crontab: system-wide crontab&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;# Unlike any other crontab you don&apos;t have to run the `crontab&apos;&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;# command to install the new version when you edit this file&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;# and files in /etc/cron.d. These files also have username fields,&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;# that none of the other crontabs do.&lt;/span&gt;
+
+&lt;span class=&quot;hljs-constant&quot;&gt;SHELL&lt;/span&gt;=&lt;span class=&quot;hljs-regexp&quot;&gt;/bin/sh&lt;/span&gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;=&lt;span class=&quot;hljs-regexp&quot;&gt;/usr/local&lt;/span&gt;&lt;span class=&quot;hljs-regexp&quot;&gt;/sbin:/usr&lt;/span&gt;&lt;span class=&quot;hljs-regexp&quot;&gt;/local/bin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/sbin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/bin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/usr/sbin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/usr/bin&lt;/span&gt;
+
+&lt;span class=&quot;hljs-comment&quot;&gt;# m h dom mon dow user  command&lt;/span&gt;
+&lt;span class=&quot;hljs-number&quot;&gt;17&lt;/span&gt; *    * * *   root    cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.hourly
+&lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.daily )
+&lt;span class=&quot;hljs-number&quot;&gt;47&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * &lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.weekly )
+&lt;span class=&quot;hljs-number&quot;&gt;52&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.monthly )
+&lt;span class=&quot;hljs-comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * *   zhanglei run-parts /home/zhanglei/zlwork/script/
+
+注：
+&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;.注释
+    m h dom mon dow user  command
+    m &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;59&lt;/span&gt;的数值，*表示任何数值都执行
+    h &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;23&lt;/span&gt;的数值，*表示任何数值都执行
+    dom &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;31&lt;/span&gt;的数值，*表示任何数值都执行
+    mon &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;的数值，*表示任何数值都执行
+    dow &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;的数值，*表示任何数值都执行,&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;/&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;代表周日
+    user 表示以某个用户身份执行命令
+    command 需要执行的脚本或命令（直接为命令或脚本文件或者run-parts 脚本文件目录）
+
+&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;.或者用crontab -e 为当前用户创建cron任务   
+&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;.脚本文件注意&lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;引用
+    由于cron是系统进程，脚本的执行经常会受到环境变量的影响，因此需要格外小心，例如我的环境变量：
+    export &lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;=~&lt;span class=&quot;hljs-regexp&quot;&gt;/bin:$PATH:/sbin&lt;/span&gt;
+</code></pre><p>2.service cron restart</p>
+<p>参考文章： </p>
+<p><a href="http://blog.csdn.net/liu414226580/article/details/16339935" target="_blank" rel="external">http://blog.csdn.net/liu414226580/article/details/16339935</a> </p>
+<p><a href="http://blog.csdn.net/wide288/article/details/8765951" target="_blank" rel="external">http://blog.csdn.net/wide288/article/details/8765951</a></p>
+<pre><code>&lt;div&gt;
+    作者：WEINILUO 发表于2016/8/24 13:58:32 [原文链接](http://blog.csdn.net/weiniluo/article/details/52299236)
+&lt;/div&gt;
+&lt;div&gt;
+阅读：90 评论：0 [查看评论](http://blog.csdn.net/weiniluo/article/details/52299236#comments)
+&lt;/div&gt;
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/08/24/原-ubuntu-定时任务/" class="archive-article-date">
+  	<time datetime="2016-08-24T17:58:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-24</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/08/25/原-c-差缺补漏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          [原]c 差缺补漏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/03/原-list-for-each-entry深入理解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[原]list_for_each_entry深入理解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'feisonzl@gmail.com'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 feison
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">你不得不拼了命，才有可能跳出呱呱坠地时的“原生阶层”，仅仅是有可能！</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

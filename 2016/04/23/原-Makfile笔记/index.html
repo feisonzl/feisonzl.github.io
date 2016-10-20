@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>[原]Makfile笔记 | feison&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Makfile初识1.1Makefile规则target &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt; : prerequisites &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt;
+    command
+    &amp;lt;span class=&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[原]Makfile笔记">
+<meta property="og:url" content="https://feisonzl.github.io/2016/04/23/原-Makfile笔记/index.html">
+<meta property="og:site_name" content="feison's blog">
+<meta property="og:description" content="1.Makfile初识1.1Makefile规则target &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt; : prerequisites &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt;
+    command
+    &amp;lt;span class=&amp;q">
+<meta property="og:updated_time" content="2016-10-20T01:29:24.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[原]Makfile笔记">
+<meta name="twitter:description" content="1.Makfile初识1.1Makefile规则target &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt; : prerequisites &amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;...&amp;lt;/span&amp;gt;
+    command
+    &amp;lt;span class=&amp;q">
+  
+    <link rel="alternative" href="/atom.xml" title="feison&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">feison</a></h1>
+		</hgroup>
+
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
+		        
+					<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">feison</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="null" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">feison</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-原-Makfile笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [原]Makfile笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Makfile初识"><a href="#1-Makfile初识" class="headerlink" title="1.Makfile初识"></a>1.Makfile初识</h1><h2 id="1-1Makefile规则"><a href="#1-1Makefile规则" class="headerlink" title="1.1Makefile规则"></a>1.1Makefile规则</h2><pre><code>target &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt; : prerequisites &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+    command
+    &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+注：  
+target:目标
+prerequisites:依赖文件
+command:makefile 需要执行的命令
+
+Makfile规则：
+    在执行Makfile时，Makfile会判断target文件是否存在，
+    若不存在，则执行下面的command命令，
+    若存在，则判断prerequisites的时间戳是否比target的时间戳要新，
+    若是，则也执行下面的command命令。`&lt;/pre&gt;
+
+## 1.2引用其他Makefile文件
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`使用方式：
+&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&gt; &amp;lt;filename&amp;gt;
+例：
+&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&gt; foo.make &lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;value) `&lt;/pre&gt;
+
+## 1.3Makefile变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;
+使用方式：
+obj= &lt;span class=&quot;hljs-operator&quot;&gt;a&lt;/span&gt;.o b.o c.o \
+    d.o e.o
+target : prerequisites
+    &lt;span class=&quot;hljs-command&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;command&lt;/span&gt; $(&lt;span class=&quot;hljs-title&quot;&gt;obj&lt;/span&gt;)&lt;/span&gt;
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;CFLAGS,CXXFLAGS 
+    CFLAGS 表示用于 C 编译器的选项，CXXFLAGS表示用于 C++ 编译器的选项。
+    CFLAGS指定头文件（.h文件）的路径、编译条件宏，如：CFLAGS=-I/usr/&lt;span class=&quot;hljs-built_in&quot;&gt;include&lt;/span&gt; -I/path/&lt;span class=&quot;hljs-built_in&quot;&gt;include&lt;/span&gt; -D_YUQIANG。
+    上面两个变量用于gcc的参数中：$(CC) $(CFLAGS)
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;LDFLAGS：
+    gcc 等编译器会用到的一些优化参数，也可以在里面指定库文件的位置。用法：
+    LDFLAGS=-L/usr/lib -L/path/&lt;span class=&quot;hljs-built_in&quot;&gt;to&lt;/span&gt;/your/lib。
+&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;LIBS：告诉链接器要链接哪些库文件，如LIBS = -lpthread -liconv
+`&lt;/pre&gt;
+
+## 1.4Makefile工作流程
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;在敲入&lt;span class=&quot;hljs-built_in&quot;&gt;make&lt;/span&gt;之后，&lt;span class=&quot;hljs-built_in&quot;&gt;make&lt;/span&gt;会在当前目录下寻找Makefile类型文件&lt;span class=&quot;hljs-number&quot;&gt;
+2&lt;/span&gt;.读入被include包含的makefile文件&lt;span class=&quot;hljs-number&quot;&gt;
+3&lt;/span&gt;.替换变量&lt;span class=&quot;hljs-number&quot;&gt;
+4&lt;/span&gt;.推到并分析所有规则&lt;span class=&quot;hljs-number&quot;&gt;
+5&lt;/span&gt;.位所有的目标创建依赖关系链&lt;span class=&quot;hljs-number&quot;&gt;
+6&lt;/span&gt;.找到文件中的第一个target作为最终的目标文件&lt;span class=&quot;hljs-number&quot;&gt;
+7&lt;/span&gt;.找到target后按照规则执行，若target的依赖文件也存在依赖文件，则同样按照规则递归执行，直到生成最终的目标文件后&lt;span class=&quot;hljs-built_in&quot;&gt;make&lt;/span&gt;执行完成`&lt;/pre&gt;
+
+# 2.书写规则
+
+## 2.1规则语法
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`方式&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;：
+targets : prereuuisites
+    command
+    &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+方式&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;：
+targets : prereuuisites ; command
+    command
+    &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+注意：
+&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;，若command为独立行，则需以&amp;lt;TAB&amp;gt;开头
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;换行符：&lt;span class=&quot;hljs-string&quot;&gt;&apos;\&apos;
+3.command默认使用/bash/sh来执行&lt;/span&gt;`&lt;/pre&gt;
+
+## 2.2通配符
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-string&quot;&gt;&apos;*&apos;&lt;/span&gt;:代表『 &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; 个到无穷多个』任意字符
+&lt;span class=&quot;hljs-string&quot;&gt;&apos;?&apos;&lt;/span&gt;:代表『一定有一个』任意字符
+&lt;span class=&quot;hljs-string&quot;&gt;&apos;~&apos;&lt;/span&gt;:代表用户的主目录，~feison/&lt;span class=&quot;hljs-built_in&quot;&gt;data&lt;/span&gt;代表用户feison主目录下的&lt;span class=&quot;hljs-built_in&quot;&gt;data&lt;/span&gt;目录
+注：若需要使用这些特定字符，在该字符前加转义字符&lt;span class=&quot;hljs-string&quot;&gt;&apos;\&apos;&lt;/span&gt;`&lt;/pre&gt;
+
+## 2.3文件搜索路径
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.VPATH变量
+VPATH:makefile中设定默认搜索文件路径的变量
+例：VPATH= src:../headers
+注：设置多个路径用冒号分隔
+2.vpath关键字
+vpath &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;pattern&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;directories&lt;/span&gt;&amp;gt;&lt;/span&gt; :为符合模式&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;pattern&lt;/span&gt;&amp;gt;&lt;/span&gt;的文件指定搜索目录&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;directories&lt;/span&gt;&amp;gt;&lt;/span&gt;
+vpath &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;pattern&lt;/span&gt;&amp;gt;&lt;/span&gt; :清除符合模式&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;pattern&lt;/span&gt;&amp;gt;&lt;/span&gt;的文件的搜索目录
+vpath :清除所有已设置好的文件搜索目录
+例：vpath %h ../headers`&lt;/pre&gt;
+
+## 2.4伪目标
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`伪目标声明方式：
+隐式声明：
+&lt;span class=&quot;hljs-label&quot;&gt;phonytargets:&lt;/span&gt;
+    commands
+显式声明：
+&lt;span class=&quot;hljs-label&quot;&gt;.PHONY:&lt;/span&gt;phonytargets
+&lt;span class=&quot;hljs-label&quot;&gt;phonytargets:&lt;/span&gt;
+    commands
+例：生成多个可执行文件
+&lt;span class=&quot;hljs-label&quot;&gt;all:&lt;/span&gt;prog1 prog2 prog3
+&lt;span class=&quot;hljs-label&quot;&gt;.PHONY:&lt;/span&gt; all
+
+&lt;span class=&quot;hljs-label&quot;&gt;prog1:&lt;/span&gt;prog1&lt;span class=&quot;hljs-preprocessor&quot;&gt;.o&lt;/span&gt;
+    commands1
+&lt;span class=&quot;hljs-label&quot;&gt;prog2:&lt;/span&gt;prog2&lt;span class=&quot;hljs-preprocessor&quot;&gt;.o&lt;/span&gt;
+    commands2
+&lt;span class=&quot;hljs-label&quot;&gt;prog3:&lt;/span&gt;prog3&lt;span class=&quot;hljs-preprocessor&quot;&gt;.o&lt;/span&gt;
+    commands3`&lt;/pre&gt;
+
+## 2.5静态模式
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`规则：
+&amp;lt;targets&amp;gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:&amp;lt;target-pattern&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:&amp;lt;prereq-pattern&amp;gt;&lt;/span&gt;
+    &amp;lt;commands&amp;gt;
+    ...
+注：
+targets：目标集，多个目标文件
+target-pattern：目标集模式
+prereq-pattern：依赖模式
+例：
+foo.o bar.o abc.m &lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt; %.o &lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt; %.c
+    &lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;CC&lt;/span&gt;) -c &lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;CFLAGS&lt;/span&gt;) &lt;span class=&quot;hljs-variable&quot;&gt;$&amp;lt;&lt;/span&gt; -o &lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;
+上述的.o文件的依赖文件为.c文件，当不满足makefile原则时，执行下面的命令`&lt;/pre&gt;
+
+# 3.书写命令
+
+## 3.1显示命令
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;@command&lt;/span&gt;和command比较
+    &lt;span class=&quot;hljs-keyword&quot;&gt;@command&lt;/span&gt; 该命令不会被make显示
+    command 该命令会被make显示
+例：
+    &lt;span class=&quot;hljs-keyword&quot;&gt;@echo&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; a test
+    make输出：
+    &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; a test
+
+    echo &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; a test
+    make输出：
+    echo &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; a test
+    &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; a test
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;make -n 只显示命令，但不执行命令
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;make -s 全面禁止命令的显示`&lt;/pre&gt;
+
+## 3.2嵌套执行make
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`make嵌套，亦是make包含，以利于模块编译和分段编译
+例：
+./Makefile:(总控Makefile)
+subsystem:
+    cd subdir &amp;amp;&amp;amp; $(MAKE)
+&amp;lt;==&amp;gt;
+sybsystem:
+    $(MAKE) -C subdir
+&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;makefile中的变量传递
+默认情况下，上级的Makefile中的变量可以传递到下级makefile中，但不会覆盖下级makefile中的变量，除非制定了-e参数。
+export &amp;lt;variable &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt; 声明要传递到下级makefile的变量
+unport &amp;lt;variable &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt; 声明不能传递到下级makefile的变量
+注：
+SHELL和MAKEFLAGS两个变量始终会被传递到下级makefile中
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;make -w
+当make进入和离开下级目录时，输出相应的目录变化信息`&lt;/pre&gt;
+
+## 3.3定义命令块
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`规则：
+define cmdblocks-name
+cmd1
+cmd2
+&lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;
+endef
+例：
+target : prereqs
+    $(cmdblocks-name)`&lt;/pre&gt;
+
+# 4.变量
+
+## 4.1变量声明
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.常规变量
+&lt;span class=&quot;hljs-constant&quot;&gt;variable&lt;/span&gt; = value
+$(variable)==&amp;gt;value
+${variable}==&amp;gt;value
+2.变量中的变量
+&lt;span class=&quot;hljs-constant&quot;&gt;variable&lt;/span&gt; ：=value
+1中的声明方式会出现无限的变量展开中，如下
+&lt;span class=&quot;hljs-constant&quot;&gt;A&lt;/span&gt;=&lt;span class=&quot;hljs-variable&quot;&gt;$(B)&lt;/span&gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;B&lt;/span&gt;=&lt;span class=&quot;hljs-variable&quot;&gt;$(A)&lt;/span&gt;
+:=的声明方式规定前面的变量不能使用后面的变量,若使用的变量前面未被定义，则其值为空
+例：
+&lt;span class=&quot;hljs-constant&quot;&gt;x&lt;/span&gt;:=foo
+&lt;span class=&quot;hljs-constant&quot;&gt;y&lt;/span&gt;:=&lt;span class=&quot;hljs-variable&quot;&gt;$(x)&lt;/span&gt; bar &lt;span class=&quot;hljs-variable&quot;&gt;$(m)&lt;/span&gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;x&lt;/span&gt;:=later
+==&amp;gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;y&lt;/span&gt;:=foo bar
+&lt;span class=&quot;hljs-constant&quot;&gt;x&lt;/span&gt;:=later
+3.定义一个其值为空格的变量
+&lt;span class=&quot;hljs-constant&quot;&gt;nullstring&lt;/span&gt;:=
+&lt;span class=&quot;hljs-constant&quot;&gt;space&lt;/span&gt;:=&lt;span class=&quot;hljs-variable&quot;&gt;$(nullstring)&lt;/span&gt; #end of the line
+注：nullstring为Empty变量，space表示一个空格，Empty变量表示一个变量的值开始了，&lt;span class=&quot;hljs-comment&quot;&gt;#表示变量的定义终止&lt;/span&gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;4&lt;/span&gt;.操作符?=
+&lt;span class=&quot;hljs-constant&quot;&gt;variable&lt;/span&gt; ?=value
+表示若variable之前被定义过，则该语句无效，若没有被定义过，其值为value`&lt;/pre&gt;
+
+## 4.2变量使用
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.多重变量
+&lt;span class=&quot;hljs-constant&quot;&gt;x&lt;/span&gt;=y
+&lt;span class=&quot;hljs-constant&quot;&gt;y&lt;/span&gt;=z
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt;:=&lt;span class=&quot;hljs-variable&quot;&gt;$($(x)&lt;/span&gt;)
+==&amp;gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt;:=z
+
+2.变量值的替换
+$(var:a=b)
+${var:a=b}
+表示把变量var中所有以a字符串结尾的a替换为b字符串
+例：
+&lt;span class=&quot;hljs-constant&quot;&gt;foo&lt;/span&gt; := a.o b.o c.o
+&lt;span class=&quot;hljs-constant&quot;&gt;bar&lt;/span&gt; :=&lt;span class=&quot;hljs-variable&quot;&gt;$(foo:.o=.c)&lt;/span&gt;
+
+&lt;span class=&quot;hljs-constant&quot;&gt;foo&lt;/span&gt; := a.o b.o c.o
+&lt;span class=&quot;hljs-constant&quot;&gt;bar&lt;/span&gt; :=&lt;span class=&quot;hljs-variable&quot;&gt;$(foo:%.o=%.c)&lt;/span&gt;
+
+3.追加变量
+&lt;span class=&quot;hljs-constant&quot;&gt;variable&lt;/span&gt; +=value
+例：
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt; := b
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt; +=c
+==&amp;gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt; := b
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt; :=&lt;span class=&quot;hljs-variable&quot;&gt;$(a)&lt;/span&gt; b
+
+4.其他
+例：
+&lt;span class=&quot;hljs-constant&quot;&gt;first_second&lt;/span&gt; = Hello
+&lt;span class=&quot;hljs-constant&quot;&gt;a&lt;/span&gt; = first
+&lt;span class=&quot;hljs-constant&quot;&gt;b&lt;/span&gt; = second
+&lt;span class=&quot;hljs-constant&quot;&gt;c&lt;/span&gt; =&lt;span class=&quot;hljs-variable&quot;&gt;$($(a)&lt;/span&gt;_&lt;span class=&quot;hljs-variable&quot;&gt;$(b)&lt;/span&gt;)
+==&amp;gt;
+&lt;span class=&quot;hljs-constant&quot;&gt;c&lt;/span&gt; = Hello`&lt;/pre&gt;
+
+## 4.3override标识符
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`通过make的命令行参数设置的变量，通常在makefile中对这些变量赋值是无效的，但可以通过&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt;标识符重新设置这些变量的值。
+&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt; &amp;lt;variable&amp;gt;; =&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;value&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt; &amp;lt;variable&amp;gt;; :=&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;value&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt; &amp;lt;variable&amp;gt;; +=&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;value&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt; define foo
+bar
+endef
+`&lt;/pre&gt;
+
+## 4.4多行变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`声明方式：
+define two-lines
+&lt;span class=&quot;hljs-built_in&quot;&gt;echo&lt;/span&gt; foo
+&lt;span class=&quot;hljs-built_in&quot;&gt;echo&lt;/span&gt; $(bar)
+endef
+注：参见&lt;span class=&quot;hljs-number&quot;&gt;3.3&lt;/span&gt;定义命令块`&lt;/pre&gt;
+
+## 4.5环境变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`参&lt;span class=&quot;hljs-number&quot;&gt;见3.2&lt;/span&gt;嵌套执行&lt;span class=&quot;hljs-built_in&quot;&gt;make&lt;/span&gt;`&lt;/pre&gt;
+
+## 4.6目标变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`目标变量表示为某个特定的目标设定的变量，该变量的值只适用于特殊目标
+声明：
+&amp;lt;target &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt;:&amp;lt;variable-assignment&amp;gt;
+&amp;lt;target &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt;:override &amp;lt;variable-assignment&amp;gt;
+注：
+&amp;lt;variable-assignment&amp;gt;表示常规赋值表达式
+第二个声明适用于make命令带入的变量或环境变量
+例：
+m = flag
+target：m= flag_target
+target:
+    @echo $(m)
+则$(m)的值为flage_target`&lt;/pre&gt;
+
+## 4.7模式变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`声明：
+&amp;lt;pattern &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt;:&amp;lt;variable-assignment&amp;gt;
+&amp;lt;pattern &lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;&amp;gt;:override &amp;lt;variable-assignment&amp;gt;
+使用方式同目标变量
+例：
+%.o : CFLAGS = -g
+prog: prog1.o prog2.o
+    $(CC) $(CFLAGS ) prog1.o prog2.o
+prog1.o:prog1.c
+    $(CC) $(CFLAGS ) prog1.c
+prog2.o:prog2.c
+    $(CC) $(CFLAGS ) prog2.c
+以上只有prog1.o和prog2.o下的命令中的CFLAGS的值为-O，其余为系统变量的值`&lt;/pre&gt;
+
+## 4.8自动化变量
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`在模式规则中（将在&amp;lt;隐含规则&amp;gt;一节中讲解），规则的目标和依赖文件名代表了一类文件名。命令是对所有这一类文件重建过程的描述，显然，在命令中不能指定特定的文件名，否则模式规则将没有了意义。那么在模式规则的命令行中该如何表示文件，将成我们这一小节的讨论重点。make中使用了“自动环变量”来实现这个目的，自动化变量的取值是根据具体的规则决定的，就是说对不同的规则其所代表的文件名不同。
+前边我们也看到了很多例子中使用到了自动化变量。下面对所有的自动化变量进行说明：
+&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;
+代表规则中的目标文件名。如果目标是一个文档（Linux中，一般称.a文件为文档），那么它代表这个文档的文件名。在多目标的模式规则中，它代表的是哪个触发规则被执行的目标文件名。
+&lt;span class=&quot;hljs-variable&quot;&gt;$%&lt;/span&gt;
+规则的目标文件是一个静态库文件时，代表静态库的一个成员名。例如，规则的目标是“foo.a(bar.o)”，那么，“&lt;span class=&quot;hljs-variable&quot;&gt;$%&lt;/span&gt;”的值就为“bar.o”，“&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;”的值为“foo.a”。如果目标不是函数库文件，其值为空。
+&lt;span class=&quot;hljs-variable&quot;&gt;$&amp;lt;&lt;/span&gt;
+规则的第一个依赖文件名。如果是隐含规则，则它代表通过目标指定的第一个依赖文件。
+&lt;span class=&quot;hljs-variable&quot;&gt;$?&lt;/span&gt;
+所有比目标文件更新的依赖文件列表，空格分割。如果目标是静态库文件名，代表的是库成员（.o文件）的更新情况。
+&lt;span class=&quot;hljs-variable&quot;&gt;$^&lt;/span&gt;
+规则的所有依赖文件列表，使用空格分隔。如果目标是静态库文件名，它所代表的只能是所有库成员（.o文件）名。一个文件可重复的出现在目标的依赖中，变量“&lt;span class=&quot;hljs-variable&quot;&gt;$^&lt;/span&gt;”只记录它的一次引用情况。就是说变量“&lt;span class=&quot;hljs-variable&quot;&gt;$^&lt;/span&gt;”会去掉重复的依赖文件。
+&lt;span class=&quot;hljs-variable&quot;&gt;$+&lt;/span&gt;
+类似“&lt;span class=&quot;hljs-variable&quot;&gt;$^&lt;/span&gt;”，但是它保留了依赖文件中重复出现的文件。主要用在程序链接时，库的交叉引用场合。
+&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;
+在模式规则和静态模式规则中，代表“茎”。“茎”是目标模式中“&lt;span class=&quot;hljs-variable&quot;&gt;%”&lt;/span&gt;所代表的部分（当文件名中存在目录时，“茎”也包含目录（斜杠之前）部分）。例如：文件“dir/a.foo.b”，当目标的模式为“a.&lt;span class=&quot;hljs-variable&quot;&gt;%.&lt;/span&gt;b”时，“&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;”的值为“dir/a.foo”。“茎”对于构造相关文件名非常有用。
+自动化变量“&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;”需要两点说明：
+Ø        对于一个明确指定的规则来说不存在“茎”，这种情况下“&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;”所代表的值发生变化。此时，如果目标文件名带有一个可识别的后缀，那么“&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;”表示文件中除后缀以外的部分。例如：“foo.c”则“&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;”的值为：“foo”，因为.c是一个可识别的文件后缀名。GUN make对明确规则的这种奇怪的处理行为是为了和其它版本的make兼容。通常，在除静态规则和模式规则以外，明确指定目标文件的规则中避免使用这个变量。
+Ø        当明确指定文件名的规则中目标文件名包含不可识别的后缀时，此变量为空。
+自动化变量“&lt;span class=&quot;hljs-variable&quot;&gt;$?&lt;/span&gt;”在显式规则中也是非常有用的，规则中可以使用它来指定只对更新的依赖文件进行操作。例如，函数库文件“libN.a”，它由一些.o文件组成。如下的规则实现了根据变化的.o文件更新库文件：
+
+lib: foo.o bar.o lose.o win.o
+    ar r lib &lt;span class=&quot;hljs-variable&quot;&gt;$?&lt;/span&gt;
+
+上述列出的自动量变量中。其中有四个在规则中代表一个文件名（&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;、&lt;span class=&quot;hljs-variable&quot;&gt;$&amp;lt;&lt;/span&gt;、&lt;span class=&quot;hljs-variable&quot;&gt;$%&lt;/span&gt;、&lt;span class=&quot;hljs-variable&quot;&gt;$*&lt;/span&gt;）。而其它三个的在规则中代表一个文件名的列表。GUN make中，还可以通过这七个自动化变量来获取一个完整文件名中的目录部分或者具体文件名，需要在这些变量中加入“D”或者“F”字符。这样就形成了一系列变种的自动环变量。这些变量在以前版本的make中使用，在当前版本的make中，可以使用“dir”或者“notdir”函数来实现同样的功能。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;@D&lt;/span&gt;)
+代表目标文件的目录部分（去掉目录部分的最后一个斜杠）。如果“&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;”是“dir/foo.o”，那么“&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;@D&lt;/span&gt;)”的值为“dir”。如果“&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;”不存在斜杠，其值就是“.”（当前目录）。注意它和函数“dir”的区别！
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;@F&lt;/span&gt;)
+目标文件的完整文件名中除目录以外的部分（实际文件名）。如果“&lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;”为“dir/foo.o”，那么“&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;@F&lt;/span&gt;)”只就是“foo.o”。“&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;@F&lt;/span&gt;)”等价于函数“&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;notdir &lt;span class=&quot;hljs-variable&quot;&gt;$@&lt;/span&gt;)”。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;*D&lt;/span&gt;)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;*F&lt;/span&gt;)
+分别代表目标“茎”中的目录部分和文件名部分。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;%D&lt;/span&gt;)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;%F&lt;/span&gt;)
+当以如“archive(member)”形式静态库为目标时，分别表示库文件成员“member”名中的目录部分和文件名部分。它仅对这种形式的规则目标有效。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&amp;lt;D)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&amp;lt;F)
+分别表示规则中第一个依赖文件的目录部分和文件名部分。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;^D)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;^F)
+分别表示所有依赖文件的目录部分和文件部分（不存在同一文件）。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;+D)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;+F)
+分别表示所有依赖文件的目录部分和文件部分（可存在重复文件）。
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;?D)
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;?F)
+分别表示被更新的依赖文件的目录部分和文件部分。`&lt;/pre&gt;
+
+# 5.逻辑判断语句
+
+## 5.1使用语法
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;.ifeq/&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;/endif
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;
+    ife&lt;span class=&quot;hljs-string&quot;&gt;q (&amp;lt;arg1&amp;gt;,&amp;lt;arg2&amp;gt;)&lt;/span&gt;
+    &amp;lt;text-ifeq&amp;gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;
+    &amp;lt;text-&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;&amp;gt;
+    endif
+
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;
+    ife&lt;span class=&quot;hljs-string&quot;&gt;q (&amp;lt;arg1&amp;gt;,&amp;lt;arg2&amp;gt;)&lt;/span&gt;
+    &amp;lt;text-ifeq&amp;gt;
+    endif
+
+&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;.ifneq/&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;/endif
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;
+    ifne&lt;span class=&quot;hljs-string&quot;&gt;q (&amp;lt;arg1&amp;gt;,&amp;lt;arg2&amp;gt;)&lt;/span&gt;
+    &amp;lt;text-ifneq&amp;gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;
+    &amp;lt;text-&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;&amp;gt;
+    endif
+
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;
+    ifne&lt;span class=&quot;hljs-string&quot;&gt;q (&amp;lt;arg1&amp;gt;,&amp;lt;arg2&amp;gt;)&lt;/span&gt;
+        &amp;lt;text-ifneq&amp;gt;
+    endif
+
+&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;.ifdef/&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;/endif
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;
+    ifdef &amp;lt;variable-name&amp;gt;
+    &amp;lt;text-ifdef&amp;gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;
+    &amp;lt;text-&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;&amp;gt;
+    endif
+
+    &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;
+    ifdef &amp;lt;variable-name&amp;gt;
+    &amp;lt;text-ifdef&amp;gt;
+    endif
+
+&lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;.&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&amp;gt;, &amp;lt;then-part&amp;gt;, &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;-part&amp;gt;
+    相当于C语言中:
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(condition)
+        then-part;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;-part;`&lt;/pre&gt;
+
+# 6.常用函数
+
+## 6.1函数调用语法
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`语法：
+$(&amp;lt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;&amp;gt; &amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;arguments&lt;/span&gt;&amp;gt;)
+&lt;span class=&quot;hljs-title&quot;&gt;$&lt;/span&gt;{&lt;/span&gt;&amp;lt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;&amp;gt; &amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;arguments&lt;/span&gt;&amp;gt;}&lt;/span&gt;`&lt;/pre&gt;
+
+## 6.2字符串处理函数
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;subst
+字符串替换函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;subst &amp;lt;from&amp;gt;,&amp;lt;to&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+例：
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;subst ee,EE,feet on the street)
+==&amp;gt;fEEt on the strEEt
+
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;patsubst
+模式字符串替换函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;patsubst &amp;lt;pattern&amp;gt;,&amp;lt;replacement&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;strip&lt;/span&gt;
+去空格函数，去掉字符串开头和结尾的空格
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;strip&lt;/span&gt; &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;findstring
+查找字符串函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;findstring &amp;lt;findstr&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;5.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;filter&lt;/span&gt;
+过滤函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;filter&lt;/span&gt; &amp;lt;pattern...&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;6.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;filter&lt;/span&gt;-out
+反过滤函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;filter&lt;/span&gt;-out &amp;lt;pattern...&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;7.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;sort&lt;/span&gt;
+排序函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;sort&lt;/span&gt; &amp;lt;list&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;8.&lt;/span&gt;word
+取单词函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;word &amp;lt;n&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;9.&lt;/span&gt;wordlist
+取单词串函数，得到从&amp;lt;s_num&amp;gt;到&amp;lt;e_num&amp;gt;的单词串
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;wordlist &amp;lt;s_num&amp;gt;,&amp;lt;e_num&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;10.&lt;/span&gt;words
+单词数统计函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;words &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;11.&lt;/span&gt;firstword
+取首单词函数
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;firstword &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&amp;gt;)
+`&lt;/pre&gt;
+
+## 6.3文件名操作函数
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.dir
+取目录函数
+$(dir &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;path_files_name&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+2.notdir
+取文件名函数
+$(nodir &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;path_files_name&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+3.suffix
+取后缀函数
+$(suffix &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;names&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+4.basename
+取前缀函数
+$(basename &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;names&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+5.addsuffix
+添加后缀函数
+$(addsuffix &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;suffix&lt;/span&gt;&amp;gt;&lt;/span&gt;,&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;names&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+6.addprefix
+添加前缀函数
+$(addprefix  &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;prefix&lt;/span&gt;&amp;gt;&lt;/span&gt;,&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;names&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+
+7.join
+连接函数
+$(join &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;list1&lt;/span&gt;&amp;gt;&lt;/span&gt;,&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;list2&lt;/span&gt;&amp;gt;&lt;/span&gt;)
+`&lt;/pre&gt;
+
+## 6.4makefile调试函数
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;error&lt;/span&gt;
+产生一个致命错误
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;error&lt;/span&gt; &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;warning&lt;/span&gt;
+生成一个警告信息
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;warning&lt;/span&gt; &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;info
+生成一个普通信息
+&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;info &amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;text&lt;/span&gt;&amp;gt;)`&lt;/pre&gt;
+
+## 6.5其他函数
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;foreach
+循环函数
+$(foreach &amp;lt;var&amp;gt;,&amp;lt;list&amp;gt;,&amp;lt;text&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;
+条件判断函数
+$(&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&amp;gt;,&amp;lt;then-part&amp;gt;)
+$(&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&amp;gt;,&amp;lt;then-part&amp;gt;,&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;-part&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;call
+调用函数的函数
+$(call &amp;lt;func&amp;gt;,&amp;lt;parm1&amp;gt;,&amp;lt;parm2&amp;gt;,&amp;lt;parm3&amp;gt;,&lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;)
+注：
+func：自定义函数
+parm1：func中的参数&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;（$(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)）
+parm2: func中的参数&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;（$(&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)）
+func中的所有参数变量均用,$(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;),$(&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)&lt;span class=&quot;hljs-keyword&quot;&gt;...&lt;/span&gt;表示
+例：
+reverse = $(&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;) $(&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)
+foo=$(call reverse ,a,b)
+==&amp;gt;
+foo=b a
+
+&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;origin
+变量源函数，输出变量来源
+源列表：
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;undefined:未定义变量
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;default:默认定义
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;&amp;gt;environment:环境变量
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;&amp;gt;file:makefile中定义的变量
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;&amp;gt;command line:命令行定义的变量
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;&amp;gt;override:override重新定义的变量
+&amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;&amp;gt;automatic:自动化变量
+$(origin &amp;lt;variable&amp;gt;)
+
+&lt;span class=&quot;hljs-number&quot;&gt;5.&lt;/span&gt;shell
+调用外部shell命令函数
+$(shell commands)
+例：
+fileslist：=$(shell echo *.c)
+`&lt;/pre&gt;
+
+# 7.Makefile调试功能
+
+## 7.1makefile调试
+
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;/pre&gt;
+
+## 7.2makefile 源码调试
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`一般方式是通过makefile向源码增加宏定义
+main.&lt;span class=&quot;hljs-symbol&quot;&gt;c:&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;#ifdef DEBUG&lt;/span&gt;
+.....
+&lt;span class=&quot;hljs-constant&quot;&gt;Makefile&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt;
+.&lt;span class=&quot;hljs-constant&quot;&gt;PHONY&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt; all clean
+
+&lt;span class=&quot;hljs-constant&quot;&gt;LINUX_ROOT&lt;/span&gt;=&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;LINUX_SRC&lt;/span&gt;)
+
+obj-m &lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt;= sil9024.o
+
+&lt;span class=&quot;hljs-symbol&quot;&gt;all:&lt;/span&gt;
+    &lt;span class=&quot;hljs-variable&quot;&gt;@make&lt;/span&gt; -&lt;span class=&quot;hljs-constant&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;LINUX_ROOT&lt;/span&gt;) &lt;span class=&quot;hljs-constant&quot;&gt;M&lt;/span&gt;=&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;PWD&lt;/span&gt;) modules &lt;span class=&quot;hljs-string&quot;&gt;&quot;CFLAGS += -DDEBUG&quot;&lt;/span&gt;
+    &lt;span class=&quot;hljs-variable&quot;&gt;@cp&lt;/span&gt; sil9024.ko ../ko/  -vfr
+
+&lt;span class=&quot;hljs-symbol&quot;&gt;clean:&lt;/span&gt;
+    &lt;span class=&quot;hljs-variable&quot;&gt;@make&lt;/span&gt; -&lt;span class=&quot;hljs-constant&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;LINUX_ROOT&lt;/span&gt;) &lt;span class=&quot;hljs-constant&quot;&gt;M&lt;/span&gt;=&lt;span class=&quot;hljs-variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;hljs-constant&quot;&gt;PWD&lt;/span&gt;) clean`&lt;/pre&gt;
+
+# 8.隐含规则
+
+&lt;pre class=&quot;prettyprint&quot;&gt;`这里写代码片
+</code></pre><h1 id="9-写在后面"><a href="#9-写在后面" class="headerlink" title="9.写在后面"></a>9.写在后面</h1><p>非常感谢皓哥的《跟我一起写Makefile》，之前看过一点，不过没有机会全部了解，这次基本全部了解过，这是我的一点读书笔记，主要参考的就是皓哥的这本书（姑且算书吧^-^），目的为分析安卓源码中的makefile打基础，所以研究不是很深入，以后有时间再深入了解。</p>
+<pre><code>&lt;div&gt;
+    作者：WEINILUO 发表于2016/4/23 18:56:25 [原文链接](http://blog.csdn.net/weiniluo/article/details/51136429)
+&lt;/div&gt;
+&lt;div&gt;
+阅读：55 评论：0 [查看评论](http://blog.csdn.net/weiniluo/article/details/51136429#comments)
+&lt;/div&gt;
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/04/23/原-Makfile笔记/" class="archive-article-date">
+  	<time datetime="2016-04-23T22:56:25.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-04-23</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/04/25/转-MIPI-小结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          [转]MIPI 小结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/26/原-windows下的adb连接调试/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[原]windows下的adb连接调试</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'feisonzl@gmail.com'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 feison
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">你不得不拼了命，才有可能跳出呱呱坠地时的“原生阶层”，仅仅是有可能！</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
