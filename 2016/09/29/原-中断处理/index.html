@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>[原]中断处理 | feison&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1 注册中断处理例程许多设备的内部工作通常是在和处理器完全不同的时间周期里完成的，并且总要比处理器慢，为了不让cpu一直等待外部设备的时间处理，必须引入中断概念。中断，当设备处理完内部工作后需要获取cpu资源时，向cpu发出的信号。该信号的发送依赖于中断信号线，不同的设备需要不同的中断信号线（当然也会有共享中断信号）。内核维护了一个中断信号线的注册表，驱动程序在使用中断前要请求一个中断通道（或IR">
@@ -12,7 +11,7 @@
 <meta property="og:url" content="https://feisonzl.github.io/2016/09/29/原-中断处理/index.html">
 <meta property="og:site_name" content="feison's blog">
 <meta property="og:description" content="1 注册中断处理例程许多设备的内部工作通常是在和处理器完全不同的时间周期里完成的，并且总要比处理器慢，为了不让cpu一直等待外部设备的时间处理，必须引入中断概念。中断，当设备处理完内部工作后需要获取cpu资源时，向cpu发出的信号。该信号的发送依赖于中断信号线，不同的设备需要不同的中断信号线（当然也会有共享中断信号）。内核维护了一个中断信号线的注册表，驱动程序在使用中断前要请求一个中断通道（或IR">
-<meta property="og:updated_time" content="2016-10-20T01:29:24.451Z">
+<meta property="og:updated_time" content="2016-10-20T09:50:22.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[原]中断处理">
 <meta name="twitter:description" content="1 注册中断处理例程许多设备的内部工作通常是在和处理器完全不同的时间周期里完成的，并且总要比处理器慢，为了不让cpu一直等待外部设备的时间处理，必须引入中断概念。中断，当设备处理完内部工作后需要获取cpu资源时，向cpu发出的信号。该信号的发送依赖于中断信号线，不同的设备需要不同的中断信号线（当然也会有共享中断信号）。内核维护了一个中断信号线的注册表，驱动程序在使用中断前要请求一个中断通道（或IR">
@@ -22,116 +21,187 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <script src="/style.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-
 </head>
-
 <body>
   <div id="container">
     <div class="left-col">
-      <div class="overlay"></div>
+    <div class="overlay"></div>
 <div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="null" class="js-avatar">
-			
-		</a>
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">feison</a></h1>
-		</hgroup>
+        <hgroup>
+          <h1 class="header-author"><a href="/">feison</a></h1>
+        </hgroup>
 
-		
+        
+                
 
-		<nav class="header-menu">
-			<ul>
-			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔">随笔</a></li>
-	        
-			</ul>
-		</nav>
-		<nav class="header-smart-menu">
-	        
-    		
-    			
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
-    			
-    			
-            
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
-		        
-					<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
-		        
-			</div>
-		</nav>
-	</header>		
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"><i class="icon-list"></i></div>
-  		<h1 class="header-author js-mobile-header hide">feison</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				
-					<img src="null" class="js-avatar">
-				
-			</div>
-			<hgroup>
-			  <h1 class="header-author">feison</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
-			        
-						<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">feison</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="/img/avatar.png" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">feison</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
 </nav>
-
-      <div class="body-wrap">
-        <article id="post-原-中断处理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-原-中断处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/29/原-中断处理/" class="article-date">
+      <time datetime="2016-09-29T21:30:10.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -146,44 +216,53 @@
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="1-注册中断处理例程"><a href="#1-注册中断处理例程" class="headerlink" title="1 注册中断处理例程"></a>1 注册中断处理例程</h3><p>许多设备的内部工作通常是在和处理器完全不同的时间周期里完成的，并且总要比处理器慢，为了不让cpu一直等待外部设备的时间处理，必须引入中断概念。中断，当设备处理完内部工作后需要获取cpu资源时，向cpu发出的信号。该信号的发送依赖于中断信号线，不同的设备需要不同的中断信号线（当然也会有共享中断信号）。内核维护了一个中断信号线的注册表，驱动程序在使用中断前要请求一个中断通道（或IRQ中断请求），在使用结束后释放该通道。下面是请求和释放中断通道的相应接口：</p>
-<pre><code>&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/sched.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; request_irq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq,
-                irqreturn_t (*handler)(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; pt_regs *),
-                &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags,
-                &lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *dev_name,
-                &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id);
+<pre><code>#include &amp;lt;linux/sched.h&amp;gt;
+int request_irq(unsigned int irq,
+                irqreturn_t (*handler)(int, void *, struct pt_regs *),
+                unsigned long flags,
+                const char *dev_name,
+                void *dev_id);
 参数：
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq：
+unsigned int irq：
 请求的中断号
 
 irqreturn_t (*handler)：
 安装的处理函数指针. 我们在本章后面讨论给这个函数的参数以及它的返回值.
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags：
+unsigned long flags：
 如你会希望的, 一个与中断管理相关的选项的位掩码(后面描述).
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *dev_name：
+const char *dev_name：
 这个传递给 request_irq 的字串用在 /proc/interrupts 来显示中断的拥有者(下一节看到)
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id：
-用作共享中断线的指针. 它是一个独特的标识, 用在当释放中断线时以及可能还被驱动用来指向它自己的私有数据区(来标识哪个设备在中断). 如果中断没有被共享, dev_id 可以设置为 &lt;span class=&quot;hljs-literal&quot;&gt;NULL&lt;/span&gt;, 但是使用这个项指向设备结构不管如何是个好主意. 我们将在&lt;span class=&quot;hljs-string&quot;&gt;&quot;实现一个处理&quot;&lt;/span&gt;一节中看到 dev_id 的一个实际应用.
+void *dev_id：
+用作共享中断线的指针. 它是一个独特的标识, 用在当释放中断线时以及可能还被驱动用来指向它自己的私有数据区(来标识哪个设备在中断). 如果中断没有被共享, dev_id 可以设置为 NULL, 但是使用这个项指向设备结构不管如何是个好主意. 我们将在&quot;实现一个处理&quot;一节中看到 dev_id 的一个实际应用.
 
 flags 中可以设置的位如下:
 SA_INTERRUPT
-当置位了, 这表示一个&lt;span class=&quot;hljs-string&quot;&gt;&quot;快速&quot;&lt;/span&gt;中断处理. 快速处理在当前处理器上禁止中断来执行(这个主题在&lt;span class=&quot;hljs-string&quot;&gt;&quot;快速和慢速处理&quot;&lt;/span&gt;一节涉及).
+当置位了, 这表示一个&quot;快速&quot;中断处理. 快速处理在当前处理器上禁止中断来执行(这个主题在&quot;快速和慢速处理&quot;一节涉及).
 SA_SHIRQ
-这个位表示中断可以在设备间共享. 共享的概念在&lt;span class=&quot;hljs-string&quot;&gt;&quot;中断共享&quot;&lt;/span&gt;一节中略述.
+这个位表示中断可以在设备间共享. 共享的概念在&quot;中断共享&quot;一节中略述.
 SA_SAMPLE_RANDOM
-这个位表示产生的中断能够有贡献给 /dev/random 和 /dev/urandom 使用的加密池. 这些设备在读取时返回真正的随机数并且设计来帮助应用程序软件为加密选择安全钥. 这样的随机数从一个由各种随机事件贡献的加密池中提取的. 如果你的设备以真正随机的时间产生中断, 你应当设置这个标志. 如果, 另一方面, 你的中断是可预测的( 例如, 一个帧抓取器的场消隐), 这个标志不值得设置 -- 它无论如何不会对系统加密有贡献. 可能被攻击者影响的设备不应当设置这个标志; 例如, 网络驱动易遭受从外部计时的可预测报文并且不应当对加密池有贡献. 更多信息看 drivers/&lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;/random&lt;span class=&quot;hljs-variable&quot;&gt;.c&lt;/span&gt; 的注释。
+这个位表示产生的中断能够有贡献给 /dev/random 和 /dev/urandom 使用的加密池. 这些设备在读取时返回真正的随机数并且设计来帮助应用程序软件为加密选择安全钥. 这样的随机数从一个由各种随机事件贡献的加密池中提取的. 如果你的设备以真正随机的时间产生中断, 你应当设置这个标志. 如果, 另一方面, 你的中断是可预测的( 例如, 一个帧抓取器的场消隐), 这个标志不值得设置 -- 它无论如何不会对系统加密有贡献. 可能被攻击者影响的设备不应当设置这个标志; 例如, 网络驱动易遭受从外部计时的可预测报文并且不应当对加密池有贡献. 更多信息看 drivers/char/random.c 的注释。
 返回值：
-&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;:成功
+0:成功
 负数：错误码
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; free_irq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id);
+void free_irq(unsigned int irq, void *dev_id);
 参数同上。`&lt;/pre&gt;
 
 #### /proc接口
@@ -192,28 +271,28 @@ SA_SAMPLE_RANDOM
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`username@ubuntu:~$ cat /proc/interrupts
            CPU0       CPU1       CPU2       CPU3       CPU4       CPU5       CPU6       CPU7
-  &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;:       &lt;span class=&quot;hljs-number&quot;&gt;4384&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      timer
-  &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;:        &lt;span class=&quot;hljs-number&quot;&gt;950&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      i8042
-  &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      floppy
-  &lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      parport0
-  &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      rtc0
-  &lt;span class=&quot;hljs-number&quot;&gt;9&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-fasteoi&lt;/span&gt;   acpi
- &lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;:       &lt;span class=&quot;hljs-number&quot;&gt;3573&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      i8042
- &lt;span class=&quot;hljs-number&quot;&gt;14&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      ata_piix
-NMI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Non&lt;span class=&quot;hljs-attribute&quot;&gt;-maskable&lt;/span&gt; interrupts
-LOC:   &lt;span class=&quot;hljs-number&quot;&gt;34453497&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;34673929&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;33285941&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;33955988&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26748072&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26296607&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;25414863&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26528495&lt;/span&gt;   &lt;span class=&quot;hljs-built_in&quot;&gt;Local&lt;/span&gt; timer interrupts
-SPU:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Spurious interrupts
-PMI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Performance monitoring interrupts
-IWI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IRQ work interrupts
-RES:   &lt;span class=&quot;hljs-number&quot;&gt;12987795&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;17430673&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;15115152&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;14059807&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;12072005&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;15228434&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;13090966&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;12469424&lt;/span&gt;   Rescheduling interrupts
-CAL:       &lt;span class=&quot;hljs-number&quot;&gt;2382&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2842&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2895&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2903&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;6002589&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2717&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2709&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2523&lt;/span&gt;   Function call interrupts
-TLB:    &lt;span class=&quot;hljs-number&quot;&gt;3183761&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3010846&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2658535&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2572622&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3065747&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3268356&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2652696&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2713237&lt;/span&gt;   TLB shootdowns
-TRM:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Thermal event interrupts
-THR:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Threshold APIC interrupts
-MCE:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Machine check exceptions
-MCP:       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;   Machine check polls
-ERR:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
-MIS:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
+  0:       4384          0          0          0          0          0          0          0   IO-APIC-edge      timer
+  1:        950          2          0          1          0          0          0          0   IO-APIC-edge      i8042
+  6:          0          0          0          0          0          0          3          0   IO-APIC-edge      floppy
+  7:          0          0          0          0          0          0          0          0   IO-APIC-edge      parport0
+  8:          1          0          0          0          0          0          0          0   IO-APIC-edge      rtc0
+  9:          0          0          0          0          0          0          0          0   IO-APIC-fasteoi   acpi
+ 12:       3573          0          0          3          0          0          0          0   IO-APIC-edge      i8042
+ 14:          0          0          0          0          0          0          0          0   IO-APIC-edge      ata_piix
+NMI:          0          0          0          0          0          0          0          0   Non-maskable interrupts
+LOC:   34453497   34673929   33285941   33955988   26748072   26296607   25414863   26528495   Local timer interrupts
+SPU:          0          0          0          0          0          0          0          0   Spurious interrupts
+PMI:          0          0          0          0          0          0          0          0   Performance monitoring interrupts
+IWI:          0          0          0          0          0          0          0          0   IRQ work interrupts
+RES:   12987795   17430673   15115152   14059807   12072005   15228434   13090966   12469424   Rescheduling interrupts
+CAL:       2382       2842       2895       2903    6002589       2717       2709       2523   Function call interrupts
+TLB:    3183761    3010846    2658535    2572622    3065747    3268356    2652696    2713237   TLB shootdowns
+TRM:          0          0          0          0          0          0          0          0   Thermal event interrupts
+THR:          0          0          0          0          0          0          0          0   Threshold APIC interrupts
+MCE:          0          0          0          0          0          0          0          0   Machine check exceptions
+MCP:       4340       4340       4340       4340       4340       4340       4340       4340   Machine check polls
+ERR:          0
+MIS:          0
 
 第一列是已经安装的中断处理例程的中断号；
 第二至九列分别是每个cpu收到的中断数量；
@@ -234,11 +313,11 @@ intr后的第一列为接收的中断总数，之后为每个IRQ信号线接收�
 
 内核提供了一些底层函数来探测中断号。它只能在非共享中断的情境下工作，但是大部分设备能够在共享中断状态工作，并且提供了更好的方法来尽量发现配置的中断号。
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; probe_irq_on(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
+&lt;pre class=&quot;prettyprint&quot;&gt;`unsigned long probe_irq_on(void);
 这个函数返回一个未安排的中断的位掩码. 驱动必须保留返回的位掩码, 并且在后面传递给 probe_irq_off。 在这个调用之后, 驱动应当安排它的设备产生至少一次中断。
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; probe_irq_off(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;);
-在设备已请求一个中断后, 驱动调用这个函数, 作为参数传递之前由 probe_irq_on 返回的位掩码。probe_irq_off 返回在&lt;span class=&quot;hljs-string&quot;&gt;&quot;probe_on&quot;&lt;/span&gt;之后发出的中断号。如果没有中断发生, 返回 &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; (因此, IRQ &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; 不能探测, 但是没有用户设备能够在任何支持的体系上使用它). 如果多于一个中断发生( 模糊的探测 ), probe_irq_off 返回一个负值。
+int probe_irq_off(unsigned long);
+在设备已请求一个中断后, 驱动调用这个函数, 作为参数传递之前由 probe_irq_on 返回的位掩码。probe_irq_off 返回在&quot;probe_on&quot;之后发出的中断号。如果没有中断发生, 返回 0 (因此, IRQ 0 不能探测, 但是没有用户设备能够在任何支持的体系上使用它). 如果多于一个中断发生( 模糊的探测 ), probe_irq_off 返回一个负值。
 注意小心使能设备上的中断, 在调用 probe_irq_on 之后启用设备上的中断以及在调用 probe_irq_off 后禁止它们。另外, 在 probe_irq_off 之后需要处理设备上待处理的中断。`&lt;/pre&gt;
 
 ##### **实现自己的探测功能**
@@ -271,21 +350,21 @@ struct pt_regs *regs：保存处理器进入中断代码前的处理器上下文
 
 例：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;//中断处理例程&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; irqreturn_t sample_interrupt(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; pt_regs *regs)
+&lt;pre class=&quot;prettyprint&quot;&gt;`//中断处理例程
+static irqreturn_t sample_interrupt(int irq, void *dev_id, struct pt_regs *regs)
 {
-        &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; sample_dev *dev = dev_id;
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* now `dev&apos; points to the right hardware item */&lt;/span&gt;
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* .... */&lt;/span&gt;
+        struct sample_dev *dev = dev_id;
+        /* now `dev&apos; points to the right hardware item */
+        /* .... */
 }
-&lt;span class=&quot;hljs-comment&quot;&gt;//和中断处理例程相关联的open代码&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; sample_open(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; inode *inode, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; file *filp)
+//和中断处理例程相关联的open代码
+static void sample_open(struct inode *inode, struct file *filp)
 {
-        &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; sample_dev *dev = hwinfo + MINOR(inode-&amp;gt;i_rdev);
+        struct sample_dev *dev = hwinfo + MINOR(inode-&amp;gt;i_rdev);
         request_irq(dev-&amp;gt;irq, sample_interrupt,
-                    &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-comment&quot;&gt;/* flags */&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;sample&quot;&lt;/span&gt;, dev &lt;span class=&quot;hljs-comment&quot;&gt;/* dev_id */&lt;/span&gt;);
-        &lt;span class=&quot;hljs-comment&quot;&gt;/*....*/&lt;/span&gt;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+                    0 /* flags */, &quot;sample&quot;, dev /* dev_id */);
+        /*....*/
+        return 0;
 
 }`&lt;/pre&gt;
 
@@ -298,17 +377,17 @@ struct pt_regs *regs：保存处理器进入中断代码前的处理器上下文
 禁止和启用单个中断：
 
 &lt;pre class=&quot;prettyprint&quot;&gt;` &amp;lt;asm/irq.h&amp;gt;
- void disable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
-void disable_irq_nosync(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq);
-void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;`&lt;/pre&gt;
+ void disable_irq(int irq);
+void disable_irq_nosync(int irq);
+void enable_irq(int irq);`&lt;/pre&gt;
 
 禁止和启用所有中断：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;asm&lt;/span&gt;/system&lt;span class=&quot;hljs-variable&quot;&gt;.h&lt;/span&gt;&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_save(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_disable(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_restore(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags); 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_enable(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
+&lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;asm/system.h&amp;gt;
+void local_irq_save(unsigned long flags);
+void local_irq_disable(void);
+void local_irq_restore(unsigned long flags); 
+void local_irq_enable(void);
 </code></pre><h3 id="3-中断的顶半部和下半部"><a href="#3-中断的顶半部和下半部" class="headerlink" title="3 中断的顶半部和下半部"></a>3 中断的顶半部和下半部</h3><p>中断处理的一个主要问题是如何处理耗时任务。 </p>
 <p>Linux (许多其他系统一起)通过将中断处理分为 2 部分解决这个问题。实际响应中断的例程，称为顶半部，也就是用request_irq注册的终端例程。底半部，被顶半部调度，并在稍后安全时间内执行的例程。 </p>
 <p>linux有两种机制来实现底半部的处理：tasklet和工作队列。tasklet非常快，但是它的代码必须是原子的；工作队列具有更高的延迟，但允许休眠。这两种机制都在《时间、延迟和延缓操作》中讲到，这里略过。</p>
@@ -334,226 +413,268 @@ void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
 </code></pre>
       
     </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/09/29/原-中断处理/" class="archive-article-date">
-  	<time datetime="2016-09-29T21:30:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-29</time>
-</a>
-      
-      
-
-      <div class="clearfix"></div>
-    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/29/原-中断处理/">[原]中断处理</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 feison 的个人博客">feison</a></p>
+        <p><span>发布时间:</span>2016年09月29日 - 17时30分</p>
+        <p><span>最后更新:</span>2016年10月20日 - 05时50分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/29/原-中断处理/" title="[原]中断处理">https://feisonzl.github.io/2016/09/29/原-中断处理/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://feisonzl.github.io/2016/09/29/原-中断处理/　　作者: feison" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/09/22/原-驱动中ioctl的使用/">
+                    [原]驱动中ioctl的使用
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
 
-  
-<nav id="article-nav">
-  
-  
-    <a href="/2016/09/22/原-驱动中ioctl的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[原]驱动中ioctl的使用</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-注册中断处理例程"><span class="toc-number">1.</span> <span class="toc-text">1 注册中断处理例程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-中断的顶半部和下半部"><span class="toc-number">2.</span> <span class="toc-text">3 中断的顶半部和下半部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-中断共享"><span class="toc-number">3.</span> <span class="toc-text">4 中断共享</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装共享处理例程"><span class="toc-number">3.1.</span> <span class="toc-text">安装共享处理例程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断驱动的I-O"><span class="toc-number">4.</span> <span class="toc-text">中断驱动的I/O</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
 </div>
 
 
 
-
-
-
-
-
-<section id="comments">
+    
+        <section id="comments">
   <div id="disqus_thread"></div>
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'feisonzl@gmail.com'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
-    //(function() {
-      //var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      //dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      //(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    //})();
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = '//feison.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
+    
 
 
-      </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 feison
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/09/22/原-驱动中ioctl的使用/" title="下一篇: [原]驱动中ioctl的使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-  </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/29/原-中断处理/">[原]中断处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/原-驱动中ioctl的使用/">[原]驱动中ioctl的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/原-时间、延迟及延缓操作/">[原]时间、延迟及延缓操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/原-I2C协议/">[原]I2C协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/转-attribute-机制/">[转]__attribute__机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/26/原-Device-Tree-入门/">[原]Device Tree 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/原-c-差缺补漏/">[原]c 差缺补漏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/24/原-ubuntu-定时任务/">[原]ubuntu 定时任务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/原-list-for-each-entry深入理解/">[原]list_for_each_entry深入理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/原-SSH端口转发与内网穿透/">[原]SSH端口转发与内网穿透</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/08/转-搬瓦工网速优化net-speeder/">[转]搬瓦工网速优化net-speeder</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/原-网络驱动接口笔记/">[原]网络驱动接口笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/29/原-shell-初识/">[原]shell  初识</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/31/原-android系统重启流程分析/">[原]android系统重启流程分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/16/原-linux字符设备驱动初识/">[原]linux字符设备驱动初识</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/原-并发与竞态/">[原]并发与竞态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/转-MIPI-小结/">[转]MIPI 小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/23/原-Makfile笔记/">[原]Makfile笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/26/原-windows下的adb连接调试/">[原]windows下的adb连接调试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/原-ubuntu下添加用户/">[原]ubuntu下添加用户</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: false,
+            isPost: true,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 feison
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
+    </div>
 </footer>
     </div>
+    
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
     <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: true,
-		root: "/",
-		innerArchive: true
-	}
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
 </script>
 
-<script src="/./main.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
-    
-<div class="tools-col">
-  <ul class="btn-wrap">
-    
-      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
-    
-    
-      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
-    
-    
-      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
-    
-    
-      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
-    
-  </ul>
-  <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all chose">
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-tag">
-    			<div class="widget tagcloud" id="js-tagcloud">
-    				
-    			</div>
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-friends">
-  		
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-me">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">你不得不拼了命，才有可能跳出呱呱坠地时的“原生阶层”，仅仅是有可能！</div>
-  	  	
-    	</section>
-    
-  </div>
-  
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
 
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
 </html>

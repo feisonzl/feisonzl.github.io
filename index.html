@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>feison&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
@@ -18,118 +17,192 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <script src="/style.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-
+    
+    
+  
 </head>
-
 <body>
   <div id="container">
     <div class="left-col">
-      <div class="overlay"></div>
+    <div class="overlay"></div>
 <div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="null" class="js-avatar">
-			
-		</a>
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">feison</a></h1>
-		</hgroup>
+        <hgroup>
+          <h1 class="header-author"><a href="/">feison</a></h1>
+        </hgroup>
 
-		
+        
+                
 
-		<nav class="header-menu">
-			<ul>
-			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔">随笔</a></li>
-	        
-			</ul>
-		</nav>
-		<nav class="header-smart-menu">
-	        
-    		
-    			
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
-    			
-    			
-            
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
-		        
-					<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
-		        
-			</div>
-		</nav>
-	</header>		
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"><i class="icon-list"></i></div>
-  		<h1 class="header-author js-mobile-header hide">feison</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				
-					<img src="null" class="js-avatar">
-				
-			</div>
-			<hgroup>
-			  <h1 class="header-author">feison</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/feisonzl" title="github">github</a>
-			        
-						<a class="mail" target="_blank" href="/feisonzl@gmail.com" title="mail">mail</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">feison</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="/img/avatar.png" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">feison</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
 </nav>
-
       <div class="body-wrap">
-        
   
     <article id="post-原-中断处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/29/原-中断处理/" class="article-date">
+      <time datetime="2016-09-29T21:30:10.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -144,44 +217,46 @@
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="1-注册中断处理例程"><a href="#1-注册中断处理例程" class="headerlink" title="1 注册中断处理例程"></a>1 注册中断处理例程</h3><p>许多设备的内部工作通常是在和处理器完全不同的时间周期里完成的，并且总要比处理器慢，为了不让cpu一直等待外部设备的时间处理，必须引入中断概念。中断，当设备处理完内部工作后需要获取cpu资源时，向cpu发出的信号。该信号的发送依赖于中断信号线，不同的设备需要不同的中断信号线（当然也会有共享中断信号）。内核维护了一个中断信号线的注册表，驱动程序在使用中断前要请求一个中断通道（或IRQ中断请求），在使用结束后释放该通道。下面是请求和释放中断通道的相应接口：</p>
-<pre><code>&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/sched.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; request_irq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq,
-                irqreturn_t (*handler)(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; pt_regs *),
-                &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags,
-                &lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *dev_name,
-                &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id);
+<pre><code>#include &amp;lt;linux/sched.h&amp;gt;
+int request_irq(unsigned int irq,
+                irqreturn_t (*handler)(int, void *, struct pt_regs *),
+                unsigned long flags,
+                const char *dev_name,
+                void *dev_id);
 参数：
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq：
+unsigned int irq：
 请求的中断号
 
 irqreturn_t (*handler)：
 安装的处理函数指针. 我们在本章后面讨论给这个函数的参数以及它的返回值.
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags：
+unsigned long flags：
 如你会希望的, 一个与中断管理相关的选项的位掩码(后面描述).
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *dev_name：
+const char *dev_name：
 这个传递给 request_irq 的字串用在 /proc/interrupts 来显示中断的拥有者(下一节看到)
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id：
-用作共享中断线的指针. 它是一个独特的标识, 用在当释放中断线时以及可能还被驱动用来指向它自己的私有数据区(来标识哪个设备在中断). 如果中断没有被共享, dev_id 可以设置为 &lt;span class=&quot;hljs-literal&quot;&gt;NULL&lt;/span&gt;, 但是使用这个项指向设备结构不管如何是个好主意. 我们将在&lt;span class=&quot;hljs-string&quot;&gt;&quot;实现一个处理&quot;&lt;/span&gt;一节中看到 dev_id 的一个实际应用.
+void *dev_id：
+用作共享中断线的指针. 它是一个独特的标识, 用在当释放中断线时以及可能还被驱动用来指向它自己的私有数据区(来标识哪个设备在中断). 如果中断没有被共享, dev_id 可以设置为 NULL, 但是使用这个项指向设备结构不管如何是个好主意. 我们将在&quot;实现一个处理&quot;一节中看到 dev_id 的一个实际应用.
 
 flags 中可以设置的位如下:
 SA_INTERRUPT
-当置位了, 这表示一个&lt;span class=&quot;hljs-string&quot;&gt;&quot;快速&quot;&lt;/span&gt;中断处理. 快速处理在当前处理器上禁止中断来执行(这个主题在&lt;span class=&quot;hljs-string&quot;&gt;&quot;快速和慢速处理&quot;&lt;/span&gt;一节涉及).
+当置位了, 这表示一个&quot;快速&quot;中断处理. 快速处理在当前处理器上禁止中断来执行(这个主题在&quot;快速和慢速处理&quot;一节涉及).
 SA_SHIRQ
-这个位表示中断可以在设备间共享. 共享的概念在&lt;span class=&quot;hljs-string&quot;&gt;&quot;中断共享&quot;&lt;/span&gt;一节中略述.
+这个位表示中断可以在设备间共享. 共享的概念在&quot;中断共享&quot;一节中略述.
 SA_SAMPLE_RANDOM
-这个位表示产生的中断能够有贡献给 /dev/random 和 /dev/urandom 使用的加密池. 这些设备在读取时返回真正的随机数并且设计来帮助应用程序软件为加密选择安全钥. 这样的随机数从一个由各种随机事件贡献的加密池中提取的. 如果你的设备以真正随机的时间产生中断, 你应当设置这个标志. 如果, 另一方面, 你的中断是可预测的( 例如, 一个帧抓取器的场消隐), 这个标志不值得设置 -- 它无论如何不会对系统加密有贡献. 可能被攻击者影响的设备不应当设置这个标志; 例如, 网络驱动易遭受从外部计时的可预测报文并且不应当对加密池有贡献. 更多信息看 drivers/&lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;/random&lt;span class=&quot;hljs-variable&quot;&gt;.c&lt;/span&gt; 的注释。
+这个位表示产生的中断能够有贡献给 /dev/random 和 /dev/urandom 使用的加密池. 这些设备在读取时返回真正的随机数并且设计来帮助应用程序软件为加密选择安全钥. 这样的随机数从一个由各种随机事件贡献的加密池中提取的. 如果你的设备以真正随机的时间产生中断, 你应当设置这个标志. 如果, 另一方面, 你的中断是可预测的( 例如, 一个帧抓取器的场消隐), 这个标志不值得设置 -- 它无论如何不会对系统加密有贡献. 可能被攻击者影响的设备不应当设置这个标志; 例如, 网络驱动易遭受从外部计时的可预测报文并且不应当对加密池有贡献. 更多信息看 drivers/char/random.c 的注释。
 返回值：
-&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;:成功
+0:成功
 负数：错误码
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; free_irq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id);
+void free_irq(unsigned int irq, void *dev_id);
 参数同上。`&lt;/pre&gt;
 
 #### /proc接口
@@ -190,28 +265,28 @@ SA_SAMPLE_RANDOM
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`username@ubuntu:~$ cat /proc/interrupts
            CPU0       CPU1       CPU2       CPU3       CPU4       CPU5       CPU6       CPU7
-  &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;:       &lt;span class=&quot;hljs-number&quot;&gt;4384&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      timer
-  &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;:        &lt;span class=&quot;hljs-number&quot;&gt;950&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      i8042
-  &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      floppy
-  &lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      parport0
-  &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      rtc0
-  &lt;span class=&quot;hljs-number&quot;&gt;9&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-fasteoi&lt;/span&gt;   acpi
- &lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;:       &lt;span class=&quot;hljs-number&quot;&gt;3573&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      i8042
- &lt;span class=&quot;hljs-number&quot;&gt;14&lt;/span&gt;:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IO&lt;span class=&quot;hljs-attribute&quot;&gt;-APIC&lt;/span&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;-edge&lt;/span&gt;      ata_piix
-NMI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Non&lt;span class=&quot;hljs-attribute&quot;&gt;-maskable&lt;/span&gt; interrupts
-LOC:   &lt;span class=&quot;hljs-number&quot;&gt;34453497&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;34673929&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;33285941&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;33955988&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26748072&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26296607&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;25414863&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;26528495&lt;/span&gt;   &lt;span class=&quot;hljs-built_in&quot;&gt;Local&lt;/span&gt; timer interrupts
-SPU:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Spurious interrupts
-PMI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Performance monitoring interrupts
-IWI:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   IRQ work interrupts
-RES:   &lt;span class=&quot;hljs-number&quot;&gt;12987795&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;17430673&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;15115152&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;14059807&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;12072005&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;15228434&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;13090966&lt;/span&gt;   &lt;span class=&quot;hljs-number&quot;&gt;12469424&lt;/span&gt;   Rescheduling interrupts
-CAL:       &lt;span class=&quot;hljs-number&quot;&gt;2382&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2842&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2895&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2903&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;6002589&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2717&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2709&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;2523&lt;/span&gt;   Function call interrupts
-TLB:    &lt;span class=&quot;hljs-number&quot;&gt;3183761&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3010846&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2658535&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2572622&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3065747&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;3268356&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2652696&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;2713237&lt;/span&gt;   TLB shootdowns
-TRM:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Thermal event interrupts
-THR:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Threshold APIC interrupts
-MCE:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;   Machine check exceptions
-MCP:       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;       &lt;span class=&quot;hljs-number&quot;&gt;4340&lt;/span&gt;   Machine check polls
-ERR:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
-MIS:          &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
+  0:       4384          0          0          0          0          0          0          0   IO-APIC-edge      timer
+  1:        950          2          0          1          0          0          0          0   IO-APIC-edge      i8042
+  6:          0          0          0          0          0          0          3          0   IO-APIC-edge      floppy
+  7:          0          0          0          0          0          0          0          0   IO-APIC-edge      parport0
+  8:          1          0          0          0          0          0          0          0   IO-APIC-edge      rtc0
+  9:          0          0          0          0          0          0          0          0   IO-APIC-fasteoi   acpi
+ 12:       3573          0          0          3          0          0          0          0   IO-APIC-edge      i8042
+ 14:          0          0          0          0          0          0          0          0   IO-APIC-edge      ata_piix
+NMI:          0          0          0          0          0          0          0          0   Non-maskable interrupts
+LOC:   34453497   34673929   33285941   33955988   26748072   26296607   25414863   26528495   Local timer interrupts
+SPU:          0          0          0          0          0          0          0          0   Spurious interrupts
+PMI:          0          0          0          0          0          0          0          0   Performance monitoring interrupts
+IWI:          0          0          0          0          0          0          0          0   IRQ work interrupts
+RES:   12987795   17430673   15115152   14059807   12072005   15228434   13090966   12469424   Rescheduling interrupts
+CAL:       2382       2842       2895       2903    6002589       2717       2709       2523   Function call interrupts
+TLB:    3183761    3010846    2658535    2572622    3065747    3268356    2652696    2713237   TLB shootdowns
+TRM:          0          0          0          0          0          0          0          0   Thermal event interrupts
+THR:          0          0          0          0          0          0          0          0   Threshold APIC interrupts
+MCE:          0          0          0          0          0          0          0          0   Machine check exceptions
+MCP:       4340       4340       4340       4340       4340       4340       4340       4340   Machine check polls
+ERR:          0
+MIS:          0
 
 第一列是已经安装的中断处理例程的中断号；
 第二至九列分别是每个cpu收到的中断数量；
@@ -232,11 +307,11 @@ intr后的第一列为接收的中断总数，之后为每个IRQ信号线接收�
 
 内核提供了一些底层函数来探测中断号。它只能在非共享中断的情境下工作，但是大部分设备能够在共享中断状态工作，并且提供了更好的方法来尽量发现配置的中断号。
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; probe_irq_on(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
+&lt;pre class=&quot;prettyprint&quot;&gt;`unsigned long probe_irq_on(void);
 这个函数返回一个未安排的中断的位掩码. 驱动必须保留返回的位掩码, 并且在后面传递给 probe_irq_off。 在这个调用之后, 驱动应当安排它的设备产生至少一次中断。
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; probe_irq_off(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;);
-在设备已请求一个中断后, 驱动调用这个函数, 作为参数传递之前由 probe_irq_on 返回的位掩码。probe_irq_off 返回在&lt;span class=&quot;hljs-string&quot;&gt;&quot;probe_on&quot;&lt;/span&gt;之后发出的中断号。如果没有中断发生, 返回 &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; (因此, IRQ &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; 不能探测, 但是没有用户设备能够在任何支持的体系上使用它). 如果多于一个中断发生( 模糊的探测 ), probe_irq_off 返回一个负值。
+int probe_irq_off(unsigned long);
+在设备已请求一个中断后, 驱动调用这个函数, 作为参数传递之前由 probe_irq_on 返回的位掩码。probe_irq_off 返回在&quot;probe_on&quot;之后发出的中断号。如果没有中断发生, 返回 0 (因此, IRQ 0 不能探测, 但是没有用户设备能够在任何支持的体系上使用它). 如果多于一个中断发生( 模糊的探测 ), probe_irq_off 返回一个负值。
 注意小心使能设备上的中断, 在调用 probe_irq_on 之后启用设备上的中断以及在调用 probe_irq_off 后禁止它们。另外, 在 probe_irq_off 之后需要处理设备上待处理的中断。`&lt;/pre&gt;
 
 ##### **实现自己的探测功能**
@@ -269,21 +344,21 @@ struct pt_regs *regs：保存处理器进入中断代码前的处理器上下文
 
 例：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;//中断处理例程&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; irqreturn_t sample_interrupt(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *dev_id, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; pt_regs *regs)
+&lt;pre class=&quot;prettyprint&quot;&gt;`//中断处理例程
+static irqreturn_t sample_interrupt(int irq, void *dev_id, struct pt_regs *regs)
 {
-        &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; sample_dev *dev = dev_id;
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* now `dev&apos; points to the right hardware item */&lt;/span&gt;
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* .... */&lt;/span&gt;
+        struct sample_dev *dev = dev_id;
+        /* now `dev&apos; points to the right hardware item */
+        /* .... */
 }
-&lt;span class=&quot;hljs-comment&quot;&gt;//和中断处理例程相关联的open代码&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; sample_open(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; inode *inode, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; file *filp)
+//和中断处理例程相关联的open代码
+static void sample_open(struct inode *inode, struct file *filp)
 {
-        &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; sample_dev *dev = hwinfo + MINOR(inode-&amp;gt;i_rdev);
+        struct sample_dev *dev = hwinfo + MINOR(inode-&amp;gt;i_rdev);
         request_irq(dev-&amp;gt;irq, sample_interrupt,
-                    &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-comment&quot;&gt;/* flags */&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&quot;sample&quot;&lt;/span&gt;, dev &lt;span class=&quot;hljs-comment&quot;&gt;/* dev_id */&lt;/span&gt;);
-        &lt;span class=&quot;hljs-comment&quot;&gt;/*....*/&lt;/span&gt;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+                    0 /* flags */, &quot;sample&quot;, dev /* dev_id */);
+        /*....*/
+        return 0;
 
 }`&lt;/pre&gt;
 
@@ -296,17 +371,17 @@ struct pt_regs *regs：保存处理器进入中断代码前的处理器上下文
 禁止和启用单个中断：
 
 &lt;pre class=&quot;prettyprint&quot;&gt;` &amp;lt;asm/irq.h&amp;gt;
- void disable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
-void disable_irq_nosync(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; irq);
-void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;`&lt;/pre&gt;
+ void disable_irq(int irq);
+void disable_irq_nosync(int irq);
+void enable_irq(int irq);`&lt;/pre&gt;
 
 禁止和启用所有中断：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;&lt;span class=&quot;hljs-keyword&quot;&gt;asm&lt;/span&gt;/system&lt;span class=&quot;hljs-variable&quot;&gt;.h&lt;/span&gt;&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_save(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_disable(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_restore(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; flags); 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; local_irq_enable(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);
+&lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;asm/system.h&amp;gt;
+void local_irq_save(unsigned long flags);
+void local_irq_disable(void);
+void local_irq_restore(unsigned long flags); 
+void local_irq_enable(void);
 </code></pre><h3 id="3-中断的顶半部和下半部"><a href="#3-中断的顶半部和下半部" class="headerlink" title="3 中断的顶半部和下半部"></a>3 中断的顶半部和下半部</h3><p>中断处理的一个主要问题是如何处理耗时任务。 </p>
 <p>Linux (许多其他系统一起)通过将中断处理分为 2 部分解决这个问题。实际响应中断的例程，称为顶半部，也就是用request_irq注册的终端例程。底半部，被顶半部调度，并在稍后安全时间内执行的例程。 </p>
 <p>linux有两种机制来实现底半部的处理：tasklet和工作队列。tasklet非常快，但是它的代码必须是原子的；工作队列具有更高的延迟，但允许休眠。这两种机制都在《时间、延迟和延缓操作》中讲到，这里略过。</p>
@@ -332,17 +407,18 @@ void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/09/29/原-中断处理/" class="archive-article-date">
-  	<time datetime="2016-09-29T21:30:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-29</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -352,10 +428,32 @@ void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-驱动中ioctl的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/22/原-驱动中ioctl的使用/" class="article-date">
+      <time datetime="2016-09-22T22:01:37.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -370,58 +468,60 @@ void enable_ir&lt;span class=&quot;hljs-string&quot;&gt;q(int irq)&lt;/span&gt;;
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="1-ioctl调用"><a href="#1-ioctl调用" class="headerlink" title="1 ioctl调用"></a>1 ioctl调用</h3><pre><code>用户空间使用：
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; ioctl(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; fd,&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; cmd,...);
+int ioctl(int fd,unsigned long cmd,...);
 内核空间声明：
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; (*ioctl)(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; inode *inode,&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; file *filp,&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; cmd,&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; arg);`&lt;/pre&gt;
+int (*ioctl)(struct inode *inode,struct file *filp,unsigned int cmd,unsigned long arg);`&lt;/pre&gt;
 
 ### 2 ioctl命令
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`内核约定了定义ioctl命令的相应方法，详细介绍见Documentation/ioctl/ioctl-number.txt和&lt;span class=&quot;hljs-keyword&quot;&gt;include&lt;/span&gt;/asm-generic/ioctl.h
-定义ioctl命令的方法使用了&lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;个位字段：&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;number&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;direction&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;:幻数字段（8&lt;span class=&quot;hljs-title&quot;&gt;bit&lt;/span&gt;）,根据&lt;span class=&quot;hljs-title&quot;&gt;ioctl&lt;/span&gt;-&lt;span class=&quot;hljs-title&quot;&gt;number&lt;/span&gt;.&lt;span class=&quot;hljs-title&quot;&gt;txt&lt;/span&gt;，选择一个号码在整个驱动中使用&lt;/span&gt;
-number:序号字段（&lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;bit），表示第几个命令号
-direction:传输方向字段（&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;bit），表示数据传输方向
-size:数据大小字段（&lt;span class=&quot;hljs-number&quot;&gt;14&lt;/span&gt;bit），表示数据传输的大小
-命令构造方法：_IOC(direction,&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;number&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;)&lt;/span&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`内核约定了定义ioctl命令的相应方法，详细介绍见Documentation/ioctl/ioctl-number.txt和include/asm-generic/ioctl.h
+定义ioctl命令的方法使用了4个位字段：type,number,direction,size
+type:幻数字段（8bit）,根据ioctl-number.txt，选择一个号码在整个驱动中使用
+number:序号字段（8bit），表示第几个命令号
+direction:传输方向字段（2bit），表示数据传输方向
+size:数据大小字段（14bit），表示数据传输的大小
+命令构造方法：_IOC(direction,type,number,size)
 常用构造命令的宏：
-#define _IO(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;nr&lt;/span&gt;)        &lt;span class=&quot;hljs-title&quot;&gt;_IOC&lt;/span&gt;(&lt;/span&gt;_IOC_NONE,(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;),(&lt;/span&gt;nr),&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;)
-#define _IOR(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;nr&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;)  &lt;span class=&quot;hljs-title&quot;&gt;_IOC&lt;/span&gt;(&lt;/span&gt;_IOC_READ,(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;),(&lt;/span&gt;nr),(_IOC_TYPECHECK(size)))
-#define _IOW(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;nr&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;)  &lt;span class=&quot;hljs-title&quot;&gt;_IOC&lt;/span&gt;(&lt;/span&gt;_IOC_WRITE,(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;),(&lt;/span&gt;nr),(_IOC_TYPECHECK(size)))
-#define _IOWR(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;nr&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;) &lt;span class=&quot;hljs-title&quot;&gt;_IOC&lt;/span&gt;(&lt;/span&gt;_IOC_READ|_IOC_WRITE,(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;),(&lt;/span&gt;nr),(_IOC_TYPECHECK(size))
+#define _IO(type,nr)        _IOC(_IOC_NONE,(type),(nr),0)
+#define _IOR(type,nr,size)  _IOC(_IOC_READ,(type),(nr),(_IOC_TYPECHECK(size)))
+#define _IOW(type,nr,size)  _IOC(_IOC_WRITE,(type),(nr),(_IOC_TYPECHECK(size)))
+#define _IOWR(type,nr,size) _IOC(_IOC_READ|_IOC_WRITE,(type),(nr),(_IOC_TYPECHECK(size))
 构造命令宏的使用：
-#define CMD1 _IO(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,1)&lt;/span&gt;
-#define CMD2R _IOR(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,2,&lt;span class=&quot;hljs-title&quot;&gt;int&lt;/span&gt;)&lt;/span&gt;
-#define CMD3W _IOW(&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,3,&lt;span class=&quot;hljs-title&quot;&gt;int&lt;/span&gt;)&lt;/span&gt;
+#define CMD1 _IO(type,1)
+#define CMD2R _IOR(type,2,int)
+#define CMD3W _IOW(type,3,int)
 `&lt;/pre&gt;
 
 ### 3 预定义命令
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`预定义命令有三类：
-&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;可用于任何文件的命令；
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;只用于普通文件的命令；
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;特定于文件系统类型的命令；
+1.可用于任何文件的命令；
+2.只用于普通文件的命令；
+3.特定于文件系统类型的命令；
 用于任何文件的常用预定义命令：
-&lt;span class=&quot;hljs-number&quot;&gt;1.F&lt;/span&gt;IOCLEX:设置执行时关闭标志
-&lt;span class=&quot;hljs-number&quot;&gt;2.F&lt;/span&gt;IONCLEX:清除执行时关闭标志
-&lt;span class=&quot;hljs-number&quot;&gt;2.F&lt;/span&gt;IOASYNC:设置或复位文件异步通知
-&lt;span class=&quot;hljs-number&quot;&gt;2.F&lt;/span&gt;IOQSIZE:返回文件或目录大小
-&lt;span class=&quot;hljs-number&quot;&gt;2.F&lt;/span&gt;IONBIO:文件IO非阻塞型IO`&lt;/pre&gt;
+1.FIOCLEX:设置执行时关闭标志
+2.FIONCLEX:清除执行时关闭标志
+2.FIOASYNC:设置或复位文件异步通知
+2.FIOQSIZE:返回文件或目录大小
+2.FIONBIO:文件IO非阻塞型IO`&lt;/pre&gt;
 
 ### 4 ioctl参数使用
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`这里主要讨论ioctl的最后一个参数，该参数常常是指向用户空间的指针，但使用用户空间的指针必须保证合法，否则可能导致内核崩溃或其他安全问题。（copy_from_user和copy_to_user内部已经实现了相关的安全验证，所以不用关心这个问题）
 因此，我们需要使用access_ok函数验证地址是否安全：
-&lt;span class=&quot;hljs-built_in&quot;&gt;int&lt;/span&gt; access_ok(&lt;span class=&quot;hljs-built_in&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;void&lt;/span&gt; *&lt;span class=&quot;hljs-title&quot;&gt;addr&lt;/span&gt;,&lt;span class=&quot;hljs-title&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;size&lt;/span&gt;);&lt;/span&gt;
-&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;:&lt;span class=&quot;hljs-title&quot;&gt;VERIFY_READ&lt;/span&gt;/&lt;span class=&quot;hljs-title&quot;&gt;VERIFY_WRITE&lt;/span&gt;&lt;/span&gt;
+int access_ok(int type,const void *addr,unsigned long size);
+type:VERIFY_READ/VERIFY_WRITE
 size:参数大小`&lt;/pre&gt;
 
 ### 5 ioctl返回值
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`这里只讨论ioctl命令不匹配时的返回值，通常的做法是返回&lt;span class=&quot;hljs-attribute&quot;&gt;-EINVAL&lt;/span&gt;,但根据POSIX标准，应该返回&lt;span class=&quot;hljs-attribute&quot;&gt;-ENOTTY&lt;/span&gt;&lt;span class=&quot;hljs-built_in&quot;&gt;.&lt;/span&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`这里只讨论ioctl命令不匹配时的返回值，通常的做法是返回-EINVAL,但根据POSIX标准，应该返回-ENOTTY.
 
         &lt;div&gt;
             作者：WEINILUO 发表于2016/9/22 18:01:37 [原文链接](http://blog.csdn.net/weiniluo/article/details/52625486)
@@ -432,17 +532,18 @@ size:参数大小`&lt;/pre&gt;
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/09/22/原-驱动中ioctl的使用/" class="archive-article-date">
-  	<time datetime="2016-09-22T22:01:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-22</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -452,10 +553,32 @@ size:参数大小`&lt;/pre&gt;
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-时间、延迟及延缓操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/21/原-时间、延迟及延缓操作/" class="article-date">
+      <time datetime="2016-09-21T21:15:35.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -470,56 +593,58 @@ size:参数大小`&lt;/pre&gt;
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="1-度量时间差"><a href="#1-度量时间差" class="headerlink" title="1.度量时间差"></a>1.度量时间差</h3><pre><code>内核通过定时器中断来跟踪时间流，时钟中断有系统定时硬件以周期性的间隔产生，这个间隔有内核根据HZ的值设定，HZ是一个与体系结构有关的常量，定义在&amp;lt;asm-generic/param.h&amp;gt;中。常用值为100或1000.每发生一次时钟中断，内核内部计数器的值增1，该值在系统引导时被初始化为0。该计数器是一个64位的变量（即使是32位架构也是这样），称为jiffies_64。但是驱动开发人员通常访问jiffies变量，它是unsigned long变量，通常是jiffies_64或者jiffies_64的低32位值。除了jiffy机制，某些cpu平台还有一个软件可读取的高分辨路计数器，以适用于特殊需求。
 `&lt;/pre&gt;
 
 #### 1.1 使用jiffies计数器
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;linux/jiffies.h&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; j, stamp_1, stamp_half, stamp_n;
+unsigned long j, stamp_1, stamp_half, stamp_n;
 
-j = jiffies; &lt;span class=&quot;hljs-comment&quot;&gt;/* read the current value */&lt;/span&gt;
-stamp_1 = j + HZ; &lt;span class=&quot;hljs-comment&quot;&gt;/* 1 second in the future */&lt;/span&gt;
-stamp_half = j + HZ/&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;; &lt;span class=&quot;hljs-comment&quot;&gt;/* half a second */&lt;/span&gt;
-stamp_n = j + n * HZ / &lt;span class=&quot;hljs-number&quot;&gt;1000&lt;/span&gt;; &lt;span class=&quot;hljs-comment&quot;&gt;/* n milliseconds */&lt;/span&gt;
+j = jiffies; /* read the current value */
+stamp_1 = j + HZ; /* 1 second in the future */
+stamp_half = j + HZ/2; /* half a second */
+stamp_n = j + n * HZ / 1000; /* n milliseconds */
 
-&lt;span class=&quot;hljs-comment&quot;&gt;//当条件为真，返回真；&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; time_after(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; a, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; b);&lt;span class=&quot;hljs-comment&quot;&gt;//a&amp;gt;b&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; time_before(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; a, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; b);&lt;span class=&quot;hljs-comment&quot;&gt;//a&amp;lt;b&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; time_after_eq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; a, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; b);&lt;span class=&quot;hljs-comment&quot;&gt;//a&amp;gt;=b&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; time_before_eq(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; a, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; b);&lt;span class=&quot;hljs-comment&quot;&gt;//a&amp;lt;=b&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;//计算时间差&lt;/span&gt;
-diff = (&lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;)t2 - (&lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;)t1;
-msec = diff * &lt;span class=&quot;hljs-number&quot;&gt;1000&lt;/span&gt; / HZ; 
-&lt;span class=&quot;hljs-comment&quot;&gt;//timespec、timeval与jiffies格式的转换&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/time.h&amp;gt; &lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; timespec_to_jiffies(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timespec *value);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; jiffies_to_timespec(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; jiffies, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timespec *value);
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; timeval_to_jiffies(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timeval *value);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; jiffies_to_timeval(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; jiffies, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timeval *value);
-&lt;span class=&quot;hljs-comment&quot;&gt;//在32位平台上原子的获取jiffies_64的值&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/jiffies.h&amp;gt; &lt;/span&gt;
-u64 get_jiffies_64(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);`&lt;/pre&gt;
+//当条件为真，返回真；
+int time_after(unsigned long a, unsigned long b);//a&amp;gt;b
+int time_before(unsigned long a, unsigned long b);//a&amp;lt;b
+int time_after_eq(unsigned long a, unsigned long b);//a&amp;gt;=b
+int time_before_eq(unsigned long a, unsigned long b);//a&amp;lt;=b
+//计算时间差
+diff = (long)t2 - (long)t1;
+msec = diff * 1000 / HZ; 
+//timespec、timeval与jiffies格式的转换
+#include &amp;lt;linux/time.h&amp;gt; 
+unsigned long timespec_to_jiffies(struct timespec *value);
+void jiffies_to_timespec(unsigned long jiffies, struct timespec *value);
+unsigned long timeval_to_jiffies(struct timeval *value);
+void jiffies_to_timeval(unsigned long jiffies, struct timeval *value);
+//在32位平台上原子的获取jiffies_64的值
+#include &amp;lt;linux/jiffies.h&amp;gt; 
+u64 get_jiffies_64(void);`&lt;/pre&gt;
 
 #### 1.2 处理器特定的计数器
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;x86平台常用的TSC计数器寄存器：
-它是一个 &lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt;-位 寄存器计数&lt;span class=&quot;hljs-constant&quot;&gt; CPU &lt;/span&gt;的时钟周期; 它可从内核和用户空间读取.
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.x86平台常用的TSC计数器寄存器：
+它是一个 64-位 寄存器计数 CPU 的时钟周期; 它可从内核和用户空间读取.
 &amp;lt;asm/msr.h&amp;gt;
 rdtsc(low32,high32);
 rdtscl(low32);
 rdtscll(var64);
-第一个宏自动读取 &lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt;位 值到 &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt; 个 &lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;位 变量;下一个读取寄存器的低半部到一个&lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;位变量;最后一个读&lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt;位值到一个&lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;变量. 所有这些宏存储数值到它们的参数中.
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;体系无关函数get_cycles:
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/timex.h&amp;gt;&lt;/span&gt;
-cycles_t get_cycles(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;); 
-在无时钟计数器的平台，返回&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;。
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;通过内嵌汇编实现：
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#define rdtscl(dest) \&lt;/span&gt;
-__asm__ __volatile__(&lt;span class=&quot;hljs-string&quot;&gt;&quot;mfc0 %0,$9; nop&quot;&lt;/span&gt; : &lt;span class=&quot;hljs-string&quot;&gt;&quot;=r&quot;&lt;/span&gt; (dest))`&lt;/pre&gt;
+第一个宏自动读取 64位 值到 2 个 32位 变量;下一个读取寄存器的低半部到一个32位变量;最后一个读64位值到一个long long变量. 所有这些宏存储数值到它们的参数中.
+2.体系无关函数get_cycles:
+#include &amp;lt;linux/timex.h&amp;gt;
+cycles_t get_cycles(void); 
+在无时钟计数器的平台，返回0。
+3.通过内嵌汇编实现：
+#define rdtscl(dest) \
+__asm__ __volatile__(&quot;mfc0 %0,$9; nop&quot; : &quot;=r&quot; (dest))`&lt;/pre&gt;
 
 ### 2.获取当前时间
 
@@ -529,57 +654,57 @@ __asm__ __volatile__(&lt;span class=&quot;hljs-string&quot;&gt;&quot;mfc0 %0,$9;
 
 常用的时间相关函数：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/time.h&amp;gt; &lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; mktime (&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; year, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; mon, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; day, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; hour, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; min, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; sec); &lt;span class=&quot;hljs-comment&quot;&gt;//将墙钟时间转化为jiffies值&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; do_gettimeofday(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timeval *tv);&lt;span class=&quot;hljs-comment&quot;&gt;//返回当前时间，但很难原子获取timeval的两个变量&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timespec current_kernel_time(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;);&lt;span class=&quot;hljs-comment&quot;&gt;//原子的获取当前时间&lt;/span&gt;`&lt;/pre&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`#include &amp;lt;linux/time.h&amp;gt; 
+unsigned long mktime (unsigned int year, unsigned int mon, unsigned int day, unsigned int hour, unsigned int min, unsigned int sec); //将墙钟时间转化为jiffies值
+void do_gettimeofday(struct timeval *tv);//返回当前时间，但很难原子获取timeval的两个变量
+struct timespec current_kernel_time(void);//原子的获取当前时间`&lt;/pre&gt;
 
 ### 3.延迟执行
 
 #### 3.1 长延迟
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;忙等待
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.忙等待
 如果想执行若干个时钟嘀嗒的延迟，或者对延迟的精度要求不高，可通过一下方法实现：
 &amp;lt;linux/jiffies.h&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; j, j1;
+unsigned long j, j1;
 j = jiffies;
 j1=j+HZ;
-&lt;span class=&quot;hljs-keyword&quot;&gt;while&lt;/span&gt; (time_before(jiffies, j1))
+while (time_before(jiffies, j1))
     cpu_relax();
 注意: cpu_relax函数在许多系统上不会做任何事情，而在对称多线程系统上，它可能让出处理器。但是通常情况下我们都应避免这种方式，因为这会严重降低系统性能。在非抢占系统上，在延迟过程中会锁住处理器；如果在进入忙等待前禁止了中断，jiffies值变得不到更新，系统就会死掉！
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;让出处理器
+2.让出处理器
 上面忙等待的方法会增加系统的负担，但延迟的实现有多种方法。延迟的另一种实现方式如下：
 &amp;lt;linux/jiffies.h&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; j, j1;
+unsigned long j, j1;
 j = jiffies;
 j1=j+HZ;
-&lt;span class=&quot;hljs-keyword&quot;&gt;while&lt;/span&gt; (time_before(jiffies, j1))
+while (time_before(jiffies, j1))
     schedule();
 注意：这种方式释放了cpu而不做任何事情，但他仍在运行队列中。若系统中只有当前进程运行，这当前进程会立即执行，因此，系统一直处于运行中，空闲任务不会运行，cpu并没有空闲下来。从cpu的角度看，这种方式和忙等待类似。
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;超时
+3.超时
 上面两种方式都会给cpu带来负担，目前最好的方式是让内核完成我们的任务。当前有两种构造基于jiffies超时的途径，这主要取决于驱动程序是否在等待其他事件。
 第一种途径，驱动程序使用等待队列等待其他一些事件：
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/wait.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; wait_event_timeout(wait_queue_head_t q, condition, &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; timeout);
-&lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; wait_event_interruptible_timeout(wait_queue_head_t q, condition, &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; timeout);
+#include &amp;lt;linux/wait.h&amp;gt;
+long wait_event_timeout(wait_queue_head_t q, condition, long timeout);
+long wait_event_interruptible_timeout(wait_queue_head_t q, condition, long timeout);
 参数：
 q:队列头
 condition：条件
 timeout：返回要等待的事件的jiffies值
 返回：
-若是被其他时间唤醒，返回剩余的jiffies值；若是超时到期，返回&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;。
+若是被其他时间唤醒，返回剩余的jiffies值；若是超时到期，返回0。
 例：
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/wait.h&amp;gt;&lt;/span&gt;
+#include &amp;lt;linux/wait.h&amp;gt;
 wait_queue_head_t wait; 
 init_waitqueue_head (&amp;amp;wait); 
-wait_event_interruptible_timeout(wait, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, delay); 
+wait_event_interruptible_timeout(wait, 0, delay); 
 第二种途径，驱动程序无需等待其他事件：
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/sched.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;signed&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; schedule_timeout(&lt;span class=&quot;hljs-keyword&quot;&gt;signed&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; timeout);
+#include &amp;lt;linux/sched.h&amp;gt;
+signed long schedule_timeout(signed long timeout);
 参数：
 timeout：延迟时间的jiffies值；
 返回：
-正常返回&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;；
+正常返回0；
 注意：使用schedule_timeout前需要设置当前进程的状态
 例：
 set_current_state(TASK_INTERRUPTIBLE);
@@ -588,14 +713,14 @@ schedule_timeout (delay);`&lt;/pre&gt;
 #### 3.2 短延迟
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`如果驱动程序需要处理硬件的延迟，这种延迟通常最多涉及到几十个毫秒。这是通常用ndelay、udelay,以及 mdelay来完成延迟任务。
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/delay.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; ndelay(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; nsecs);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; udelay(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; usecs);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; mdelay(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; msecs);
+#include &amp;lt;linux/delay.h&amp;gt;
+void ndelay(unsigned long nsecs);
+void udelay(unsigned long usecs);
+void mdelay(unsigned long msecs);
 这三个方法都是忙等待函数，当然不涉及忙等待的方法也有相应的实现：
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; msleep(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; millisecs);
-&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; msleep_interruptible(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; millisecs);
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; ssleep(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; seconds);`&lt;/pre&gt;
+void msleep(unsigned int millisecs);
+unsigned long msleep_interruptible(unsigned int millisecs);
+void ssleep(unsigned int seconds);`&lt;/pre&gt;
 
 ### 4.内核定时器
 
@@ -618,39 +743,39 @@ in_interrupt()和in_atomic():
 #### 4.1 定时器API
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`内核提供给驱动许多函数来声明, 注册, 以及去除内核定时器. 下列的引用展示了基本的代码块:
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/timer.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list
+#include &amp;lt;linux/timer.h&amp;gt;
+struct timer_list
 {
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* ... */&lt;/span&gt;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; expires;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*function)(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;);
-        &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; data;
+        /* ... */
+        unsigned long expires;
+        void (*function)(unsigned long);
+        unsigned long data;
 };
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; init_timer(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list *timer);
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list TIMER_INITIALIZER(_function, _expires, _data);
+void init_timer(struct timer_list *timer);
+struct timer_list TIMER_INITIALIZER(_function, _expires, _data);
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; add_timer(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list * timer);
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; del_timer(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list * timer);
+void add_timer(struct timer_list * timer);
+int del_timer(struct timer_list * timer);
 
-&lt;span class=&quot;hljs-comment&quot;&gt;//更新某个定时器的到期时间&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; mod_timer(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list *timer, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; expires);
-&lt;span class=&quot;hljs-comment&quot;&gt;//和del_timer类似，但是del_timer_sync确保返回时没有任何CPU在运行定时器函数&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; del_timer_sync(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list *timer);
-&lt;span class=&quot;hljs-comment&quot;&gt;//返回定时器是否正在被调度运行&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; timer_pending(&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; timer_list * timer);`&lt;/pre&gt;
+//更新某个定时器的到期时间
+int mod_timer(struct timer_list *timer, unsigned long expires);
+//和del_timer类似，但是del_timer_sync确保返回时没有任何CPU在运行定时器函数
+int del_timer_sync(struct timer_list *timer);
+//返回定时器是否正在被调度运行
+int timer_pending(const struct timer_list * timer);`&lt;/pre&gt;
 
 #### 4.2 内核定时器的实现
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`内核定时器的实现要求：
-&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;定时器的管理必须做到轻量级；
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;其设计必须在活动定时器大量增加时具有良好的伸缩性；
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;大部分定时器会在最多几秒或者几分钟内到期，很少存在长期延迟的定时器；
-&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;定时器应该在注册他的当前cpu上运行。
+1.定时器的管理必须做到轻量级；
+2.其设计必须在活动定时器大量增加时具有良好的伸缩性；
+3.大部分定时器会在最多几秒或者几分钟内到期，很少存在长期延迟的定时器；
+4.定时器应该在注册他的当前cpu上运行。
 
 目前的解决方案是利用per-CPU数据结构。
-无论何时内核代码注册一个定时器( 通过 add_timer 或者 mod_timer), 最终由 internal_add_timer ( 在kernel/timer&lt;span class=&quot;hljs-preprocessor&quot;&gt;.c&lt;/span&gt;)执行, 它依次添加新定时器到一个双向定时器链表在一个关联到当前 CPU 的&lt;span class=&quot;hljs-string&quot;&gt;&quot;级联表&quot;&lt;/span&gt; 中。
-级联表的工作工作方式: 如果定时器在下一个 &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; 到 &lt;span class=&quot;hljs-number&quot;&gt;255&lt;/span&gt; jiffies 内到期, 则它会被添加到专供短时定时器 &lt;span class=&quot;hljs-number&quot;&gt;256&lt;/span&gt; 列表中的一个（这取决于expires 成员的低&lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;位）。如果它在将来更久时间到期（但是在 &lt;span class=&quot;hljs-number&quot;&gt;16&lt;/span&gt;,&lt;span class=&quot;hljs-number&quot;&gt;384&lt;/span&gt; jiffies 之前), 它会被添加到基于 expires 成员的 &lt;span class=&quot;hljs-number&quot;&gt;9&lt;/span&gt; - &lt;span class=&quot;hljs-number&quot;&gt;14&lt;/span&gt; 位的 &lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt; 个列表中一个. 对于更长的定时器, 同样的技巧用在 &lt;span class=&quot;hljs-number&quot;&gt;15&lt;/span&gt; - &lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt; 位, &lt;span class=&quot;hljs-number&quot;&gt;21&lt;/span&gt; - &lt;span class=&quot;hljs-number&quot;&gt;26&lt;/span&gt; 位, 和 &lt;span class=&quot;hljs-number&quot;&gt;27&lt;/span&gt; - &lt;span class=&quot;hljs-number&quot;&gt;31&lt;/span&gt; 位. 带有一个指向将来还长时间的 expires 成员的定时器（一些只可能发生在 &lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt;-位 平台上的事情）被使用一个延时值 &lt;span class=&quot;hljs-number&quot;&gt;0xffffffff&lt;/span&gt; 进行哈希处理, 而在过去时间内到期的定时器将在下一个时钟嘀哒被调度（如果在高负荷情况，有可能注册一个已经到期的定时器，尤其在运行抢占式内核时）。
-当触发 __run_timers, 它为当前定时器嘀哒执行所有挂起的定时器。如果当前jiffies是&lt;span class=&quot;hljs-number&quot;&gt;256&lt;/span&gt;的倍数, 这个函数还会将下一级定时器链表重新散列到&lt;span class=&quot;hljs-number&quot;&gt;256&lt;/span&gt;个短期列表中, 同时还可能根据上面jiffies的位划分对其他级别的定时器做级联处理。`&lt;/pre&gt;
+无论何时内核代码注册一个定时器( 通过 add_timer 或者 mod_timer), 最终由 internal_add_timer ( 在kernel/timer.c)执行, 它依次添加新定时器到一个双向定时器链表在一个关联到当前 CPU 的&quot;级联表&quot; 中。
+级联表的工作工作方式: 如果定时器在下一个 0 到 255 jiffies 内到期, 则它会被添加到专供短时定时器 256 列表中的一个（这取决于expires 成员的低8位）。如果它在将来更久时间到期（但是在 16,384 jiffies 之前), 它会被添加到基于 expires 成员的 9 - 14 位的 64 个列表中一个. 对于更长的定时器, 同样的技巧用在 15 - 20 位, 21 - 26 位, 和 27 - 31 位. 带有一个指向将来还长时间的 expires 成员的定时器（一些只可能发生在 64-位 平台上的事情）被使用一个延时值 0xffffffff 进行哈希处理, 而在过去时间内到期的定时器将在下一个时钟嘀哒被调度（如果在高负荷情况，有可能注册一个已经到期的定时器，尤其在运行抢占式内核时）。
+当触发 __run_timers, 它为当前定时器嘀哒执行所有挂起的定时器。如果当前jiffies是256的倍数, 这个函数还会将下一级定时器链表重新散列到256个短期列表中, 同时还可能根据上面jiffies的位划分对其他级别的定时器做级联处理。`&lt;/pre&gt;
 
 ### 5.tasklet
 
@@ -682,30 +807,30 @@ in_interrupt()和in_atomic():
 
 #### 5.3 tasklet使用
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;linux/interrupt.h&amp;gt; &lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct {
- &lt;span class=&quot;hljs-comment&quot;&gt;/* ... */&lt;/span&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`#include &amp;lt;linux/interrupt.h&amp;gt; 
+struct tasklet_struct {
+ /* ... */
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*func)(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;);
- &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; data;
+void (*func)(unsigned long);
+ unsigned long data;
 };
 
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_init(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t,
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*func)(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;), &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; data);
+void tasklet_init(struct tasklet_struct *t,
+void (*func)(unsigned long), unsigned long data);
 DECLARE_TASKLET(name, func, data);
 DECLARE_TASKLET_DISABLED(name, func, data);
-&lt;span class=&quot;hljs-comment&quot;&gt;//禁用指定的tasklet&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_disable(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);
-&lt;span class=&quot;hljs-comment&quot;&gt;//禁用指定的tasklet，但不会等待任何正在运行的tasklet退出&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_disable_nosync(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);
-&lt;span class=&quot;hljs-comment&quot;&gt;//启用之前被禁用的tasklet&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_enable(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);
-&lt;span class=&quot;hljs-comment&quot;&gt;//调度指定的tasklet&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_schedule(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);
-&lt;span class=&quot;hljs-comment&quot;&gt;//禁用指定的tasklet以高优先级执行&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_hi_schedule(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);
-&lt;span class=&quot;hljs-comment&quot;&gt;//禁止指定的tasklet的再次调度，通用用于设备关闭和模块移除&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; tasklet_kill(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; tasklet_struct *t);`&lt;/pre&gt;
+//禁用指定的tasklet
+void tasklet_disable(struct tasklet_struct *t);
+//禁用指定的tasklet，但不会等待任何正在运行的tasklet退出
+void tasklet_disable_nosync(struct tasklet_struct *t);
+//启用之前被禁用的tasklet
+void tasklet_enable(struct tasklet_struct *t);
+//调度指定的tasklet
+void tasklet_schedule(struct tasklet_struct *t);
+//禁用指定的tasklet以高优先级执行
+void tasklet_hi_schedule(struct tasklet_struct *t);
+//禁止指定的tasklet的再次调度，通用用于设备关闭和模块移除
+void tasklet_kill(struct tasklet_struct *t);`&lt;/pre&gt;
 
 ### 6.工作队列
 
@@ -722,25 +847,25 @@ DECLARE_TASKLET_DISABLED(name, func, data);
 #### 6.1 工作队列的使用
 
 &lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;linux/workqueue.h&amp;gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;//创建工作队列&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *create_workqueue(&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *name);
-&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *create_singlethread_workqueue(&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; *name);
-&lt;span class=&quot;hljs-comment&quot;&gt;//编译时向工作队列递交任务&lt;/span&gt;
-DECLARE_WORK(name, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*function)(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *), &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *data);
-&lt;span class=&quot;hljs-comment&quot;&gt;//运行时构造work_struct 结构&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;//INIT_WORK完成所有初始化工作&lt;/span&gt;
-INIT_WORK(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*function)(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *), &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *data); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//同INIT_WORK，但不会初始化用来将work_struct结构连接到工作队列的指针&lt;/span&gt;
-PREPARE_WORK(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work, &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; (*function)(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *), &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; *data); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//将工作递交到工作队列&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; queue_work(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *&lt;span class=&quot;hljs-built_in&quot;&gt;queue&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work);
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; queue_delayed_work(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *&lt;span class=&quot;hljs-built_in&quot;&gt;queue&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; delay);
-&lt;span class=&quot;hljs-comment&quot;&gt;//取消某个挂起的工作队列入口项&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; cancel_delayed_work(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//禁止运行被调用之前所有被递交的工作&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; flush_workqueue(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *&lt;span class=&quot;hljs-built_in&quot;&gt;queue&lt;/span&gt;); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//释放工作队列&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; destroy_workqueue(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; workqueue_struct *&lt;span class=&quot;hljs-built_in&quot;&gt;queue&lt;/span&gt;); `&lt;/pre&gt;
+//创建工作队列
+struct workqueue_struct *create_workqueue(const char *name);
+struct workqueue_struct *create_singlethread_workqueue(const char *name);
+//编译时向工作队列递交任务
+DECLARE_WORK(name, void (*function)(void *), void *data);
+//运行时构造work_struct 结构
+//INIT_WORK完成所有初始化工作
+INIT_WORK(struct work_struct *work, void (*function)(void *), void *data); 
+//同INIT_WORK，但不会初始化用来将work_struct结构连接到工作队列的指针
+PREPARE_WORK(struct work_struct *work, void (*function)(void *), void *data); 
+//将工作递交到工作队列
+int queue_work(struct workqueue_struct *queue, struct work_struct *work);
+int queue_delayed_work(struct workqueue_struct *queue, struct work_struct *work, unsigned long delay);
+//取消某个挂起的工作队列入口项
+int cancel_delayed_work(struct work_struct *work); 
+//禁止运行被调用之前所有被递交的工作
+void flush_workqueue(struct workqueue_struct *queue); 
+//释放工作队列
+void destroy_workqueue(struct workqueue_struct *queue); `&lt;/pre&gt;
 
 #### 6.2 共享队列
 
@@ -748,15 +873,15 @@ PREPARE_WORK(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work
 
 1.共享队列使用：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;//递交工作任务&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; schedule_work(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//以延迟模式递交工作任务&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; schedule_delayed_work(&lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct *work, &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt; delay); 
-&lt;span class=&quot;hljs-comment&quot;&gt;//刷新共享队列&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; flush_scheduled_work(&lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt;); 
+&lt;pre class=&quot;prettyprint&quot;&gt;`//递交工作任务
+int schedule_work(struct work_struct *work); 
+//以延迟模式递交工作任务
+int schedule_delayed_work(struct work_struct *work, unsigned long delay); 
+//刷新共享队列
+void flush_scheduled_work(void); 
 例：
-&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;struct&lt;/span&gt; work_struct jiq_work;
-&lt;span class=&quot;hljs-comment&quot;&gt;/* this line is in jiq_init() */&lt;/span&gt;
+static struct work_struct jiq_work;
+/* this line is in jiq_init() */
 INIT_WORK(&amp;amp;jiq_work, jiq_print_wq, &amp;amp;jiq_data);
 prepare_to_wait(&amp;amp;jiq_wait, &amp;amp;wait, TASK_INTERRUPTIBLE);
 schedule_work(&amp;amp;jiq_work);
@@ -772,17 +897,18 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/09/21/原-时间、延迟及延缓操作/" class="archive-article-date">
-  	<time datetime="2016-09-21T21:15:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-21</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -792,10 +918,32 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-I2C协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/18/原-I2C协议/" class="article-date">
+      <time datetime="2016-09-18T13:49:16.000Z" itemprop="datePublished">2016-09-18</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -810,51 +958,53 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="1-协议"><a href="#1-协议" class="headerlink" title="1.协议"></a>1.协议</h3><pre><code>1.空闲状态：
     SCL=H&amp;amp;&amp;amp;SDA=H
 2.起始位和停止位:
-    &lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;:
+    start bit:
         SCL=H&amp;amp;&amp;amp;SDA↓
-    stop &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;:
+    stop bit:
         SCL=H&amp;amp;&amp;amp;SDA↑
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;ACK
-    发送器每发送完一个字节，就在第&lt;span class=&quot;hljs-number&quot;&gt;9&lt;/span&gt;个CLK释放数据线，由接收器反馈一个应答信号。 应答信号为低电平时，规定为有效应答位（ACK简称应答位），表示接收器已经成功地接收了该字节；应答信号为高电平时，规定为非应答位（NACK），一般表示接收器接收该字节没有成功。
+3.ACK
+    发送器每发送完一个字节，就在第9个CLK释放数据线，由接收器反馈一个应答信号。 应答信号为低电平时，规定为有效应答位（ACK简称应答位），表示接收器已经成功地接收了该字节；应答信号为高电平时，规定为非应答位（NACK），一般表示接收器接收该字节没有成功。
 
-&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;数据有效性
+4.数据有效性
     I2C总线进行数据传送时，时钟信号为高电平期间，数据线上的数据必须保持稳定，只有在时钟线上的信号为低电平期间，数据线上的高电平或低电平状态才允许变化。 
 
-&lt;span class=&quot;hljs-number&quot;&gt;5.&lt;/span&gt;主从设备
-    系统中的所有外围器件都具有一个&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;位的&lt;span class=&quot;hljs-string&quot;&gt;&quot;从器件专用地址码&quot;&lt;/span&gt;，其中高&lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt;位为器件类型，由生产厂家制定，低&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;位为器件引脚定义地址，由使用者定义。所以同一厂家的同一器件最多只能在同一个I2C总线上挂在&lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;片。
-&lt;/span&gt;`&lt;/pre&gt;
+5.主从设备
+    系统中的所有外围器件都具有一个7位的&quot;从器件专用地址码&quot;，其中高4位为器件类型，由生产厂家制定，低3位为器件引脚定义地址，由使用者定义。所以同一厂家的同一器件最多只能在同一个I2C总线上挂在8片。
+`&lt;/pre&gt;
 
 ### 2.读写流程
 
 #### 2.1写流程
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`1.&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;send slave address+&lt;span class=&quot;hljs-keyword&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;send reg address
-&lt;span class=&quot;hljs-number&quot;&gt;5.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;6.&lt;/span&gt;send data
-&lt;span class=&quot;hljs-number&quot;&gt;7.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;8.&lt;/span&gt;stop &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;&lt;/span&gt;`&lt;/pre&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.start bit
+2.send slave address+write bit
+3.check ack
+4.send reg address
+5.check ack
+6.send data
+7.check ack
+8.stop bit`&lt;/pre&gt;
 
 #### 2.2读流程
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`1.&lt;span class=&quot;hljs-operator&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;send slave address+&lt;span class=&quot;hljs-keyword&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;4.&lt;/span&gt;send reg address
-&lt;span class=&quot;hljs-number&quot;&gt;5.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;6.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;7.&lt;/span&gt;send slave address+&lt;span class=&quot;hljs-keyword&quot;&gt;read&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;8.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;check&lt;/span&gt; ack
-&lt;span class=&quot;hljs-number&quot;&gt;9.&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;read&lt;/span&gt; data
-&lt;span class=&quot;hljs-number&quot;&gt;10.&lt;/span&gt;stop &lt;span class=&quot;hljs-keyword&quot;&gt;bit&lt;/span&gt;&lt;/span&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.start bit
+2.send slave address+write bit
+3.check ack
+4.send reg address
+5.check ack
+6.start bit
+7.send slave address+read bit
+8.check ack
+9.read data
+10.stop bit
 
         &lt;div&gt;
             作者：WEINILUO 发表于2016/9/18 9:49:16 [原文链接](http://blog.csdn.net/weiniluo/article/details/51790017)
@@ -865,17 +1015,18 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/09/18/原-I2C协议/" class="archive-article-date">
-  	<time datetime="2016-09-18T13:49:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-18</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -885,10 +1036,32 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-转-attribute-机制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/12/转-attribute-机制/" class="article-date">
+      <time datetime="2016-09-12T14:41:13.000Z" itemprop="datePublished">2016-09-12</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -903,9 +1076,11 @@ finish_wait(&amp;amp;jiq_wait, &amp;amp;wait);
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>内核中常会用到<strong>attribute</strong>，今天仔细了解一下这个<strong>attribute</strong>机制。</p>
 <h3 id="1-概要"><a href="#1-概要" class="headerlink" title="1.概要"></a>1.概要</h3><p><strong>attribute</strong>可以设置函数属性（Function Attribute）、变量属性（Variable Attribute）和类型属性（Type Attribute）。它的书写特征是：<strong>attribute</strong>前后都有两个下划线，后面attribute-list是相应的<strong>attribute</strong>参数，语法格式如下： </p>
 <p><strong>attribute</strong> ((attribute-list)) </p>
@@ -1064,17 +1239,18 @@ struct my_unpacked_struct s;
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/09/12/转-attribute-机制/" class="archive-article-date">
-  	<time datetime="2016-09-12T14:41:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-12</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1084,10 +1260,32 @@ struct my_unpacked_struct s;
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-Device-Tree-入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/26/原-Device-Tree-入门/" class="article-date">
+      <time datetime="2016-08-26T18:15:06.000Z" itemprop="datePublished">2016-08-26</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -1102,109 +1300,111 @@ struct my_unpacked_struct s;
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>1.写在前面 </p>
 <p>本文是本人在阅读了蜗窝科技的Device Tree三篇文章后的笔记，他的这几篇文章是我最近了解到的在Device Tree方面讲的比较深入细致的，非常感谢蜗窝科技为我们提供的学习机会，如果有需要，请你们去<a href="http://www.wowotech.net/device_model/why-dt.html" target="_blank" rel="external">蜗窝科技</a>。 </p>
 <p>2.Device Tree结构</p>
 <pre><code>kernel/arch/arm/boot/dts/skeleton.dtsi:
 / {
-    #address-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;;
-    #&lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt;-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;;
+    #address-cells = &amp;lt;1&amp;gt;;
+    #size-cells = &amp;lt;1&amp;gt;;
     cpus { };
     soc { };
     chosen { };
     aliases { };
-    &lt;span class=&quot;hljs-keyword&quot;&gt;memory&lt;/span&gt; { device_type = &lt;span class=&quot;hljs-string&quot;&gt;&quot;memory&quot;&lt;/span&gt;; reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;&amp;gt;; };
+    memory { device_type = &quot;memory&quot;; reg = &amp;lt;0 0&amp;gt;; };
 };
 kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
-#include &lt;span class=&quot;hljs-string&quot;&gt;&quot;skeleton64.dtsi&quot;&lt;/span&gt;
-#include &amp;lt;dt-bindings/clock/msm-clocks-&lt;span class=&quot;hljs-number&quot;&gt;8953.&lt;/span&gt;h&amp;gt;
+#include &quot;skeleton64.dtsi&quot;
+#include &amp;lt;dt-bindings/clock/msm-clocks-8953.h&amp;gt;
 #include &amp;lt;dt-bindings/regulator/qcom,rpm-smd-regulator.h&amp;gt;
 #include &amp;lt;dt-bindings/gpio/gpio.h&amp;gt;
 / {
-    model = &lt;span class=&quot;hljs-string&quot;&gt;&quot;Qualcomm Technologies, Inc. MSM 8953&quot;&lt;/span&gt;;
-    compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;qcom,msm8953&quot;&lt;/span&gt;;
-    qcom,msm-id = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;293&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt;&amp;gt;;
-    interrupt-&lt;span class=&quot;hljs-keyword&quot;&gt;parent&lt;/span&gt; = &amp;lt;&amp;amp;intc&amp;gt;;
+    model = &quot;Qualcomm Technologies, Inc. MSM 8953&quot;;
+    compatible = &quot;qcom,msm8953&quot;;
+    qcom,msm-id = &amp;lt;293 0x0&amp;gt;;
+    interrupt-parent = &amp;lt;&amp;amp;intc&amp;gt;;
 
     chosen {
-        bootargs = &lt;span class=&quot;hljs-string&quot;&gt;&quot;sched_enable_hmp=1 sched_enable_power_aware=1&quot;&lt;/span&gt;;
+        bootargs = &quot;sched_enable_hmp=1 sched_enable_power_aware=1&quot;;
     };
 
-    reserved-&lt;span class=&quot;hljs-keyword&quot;&gt;memory&lt;/span&gt; {
-        #address-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;;
-        #&lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt;-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;;
+    reserved-memory {
+        #address-cells = &amp;lt;2&amp;gt;;
+        #size-cells = &amp;lt;2&amp;gt;;
         ranges;
 
-        other_ext_mem: other_ext_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;removed-dma-pool&quot;&lt;/span&gt;;
+        other_ext_mem: other_ext_region@0 {
+            compatible = &quot;removed-dma-pool&quot;;
             no-map;
-            reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x83300000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x3800000&lt;/span&gt;&amp;gt;;
+            reg = &amp;lt;0x0 0x83300000 0x0 0x3800000&amp;gt;;
         };
 
-        modem_mem: modem_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;removed-dma-pool&quot;&lt;/span&gt;;
+        modem_mem: modem_region@0 {
+            compatible = &quot;removed-dma-pool&quot;;
             no-map-fixup;
-            reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x86c00000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x5600000&lt;/span&gt;&amp;gt;;
+            reg = &amp;lt;0x0 0x86c00000 0x0 0x5600000&amp;gt;;
         };
 
-        reloc_mem: reloc_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;removed-dma-pool&quot;&lt;/span&gt;;
+        reloc_mem: reloc_region@0 {
+            compatible = &quot;removed-dma-pool&quot;;
             no-map;
-            reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x8c200000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x1800000&lt;/span&gt;&amp;gt;;
+            reg = &amp;lt;0x0 0x8c200000 0x0 0x1800000&amp;gt;;
         };
 
-        venus_mem: venus_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;shared-dma-pool&quot;&lt;/span&gt;;
+        venus_mem: venus_region@0 {
+            compatible = &quot;shared-dma-pool&quot;;
             reusable;
-            alloc-ranges = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x80000000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x10000000&lt;/span&gt;&amp;gt;;
-            alignment = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x400000&lt;/span&gt;&amp;gt;;
-            &lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt; = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0800000&lt;/span&gt;&amp;gt;;
+            alloc-ranges = &amp;lt;0x0 0x80000000 0x0 0x10000000&amp;gt;;
+            alignment = &amp;lt;0 0x400000&amp;gt;;
+            size = &amp;lt;0 0x0800000&amp;gt;;
         };
 
-        secure_mem: secure_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;shared-dma-pool&quot;&lt;/span&gt;;
+        secure_mem: secure_region@0 {
+            compatible = &quot;shared-dma-pool&quot;;
             reusable;
-            alignment = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x400000&lt;/span&gt;&amp;gt;;
-            &lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt; = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x09800000&lt;/span&gt;&amp;gt;;
+            alignment = &amp;lt;0 0x400000&amp;gt;;
+            size = &amp;lt;0 0x09800000&amp;gt;;
         };
 
-        qseecom_mem: qseecom_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;shared-dma-pool&quot;&lt;/span&gt;;
+        qseecom_mem: qseecom_region@0 {
+            compatible = &quot;shared-dma-pool&quot;;
             reusable;
-            alignment = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x400000&lt;/span&gt;&amp;gt;;
-            &lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt; = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x1000000&lt;/span&gt;&amp;gt;;
+            alignment = &amp;lt;0 0x400000&amp;gt;;
+            size = &amp;lt;0 0x1000000&amp;gt;;
         };
 
-        adsp_mem: adsp_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;shared-dma-pool&quot;&lt;/span&gt;;
+        adsp_mem: adsp_region@0 {
+            compatible = &quot;shared-dma-pool&quot;;
             reusable;
-            &lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt; = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x400000&lt;/span&gt;&amp;gt;;
+            size = &amp;lt;0 0x400000&amp;gt;;
         };
 
-        dfps_data_mem: dfps_data_mem&lt;span class=&quot;hljs-variable&quot;&gt;@90000000&lt;/span&gt; {
-               reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x90000000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x1000&lt;/span&gt;&amp;gt;;
-               label = &lt;span class=&quot;hljs-string&quot;&gt;&quot;dfps_data_mem&quot;&lt;/span&gt;;
+        dfps_data_mem: dfps_data_mem@90000000 {
+               reg = &amp;lt;0 0x90000000 0 0x1000&amp;gt;;
+               label = &quot;dfps_data_mem&quot;;
         };
 
-        cont_splash_mem: splash_region&lt;span class=&quot;hljs-variable&quot;&gt;@0x90001000&lt;/span&gt; {
-            reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x90001000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x13ff000&lt;/span&gt;&amp;gt;;
-            label = &lt;span class=&quot;hljs-string&quot;&gt;&quot;cont_splash_mem&quot;&lt;/span&gt;;
+        cont_splash_mem: splash_region@0x90001000 {
+            reg = &amp;lt;0x0 0x90001000 0x0 0x13ff000&amp;gt;;
+            label = &quot;cont_splash_mem&quot;;
         };
 
-        gpu_mem: gpu_region&lt;span class=&quot;hljs-variable&quot;&gt;@0&lt;/span&gt; {
-            compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;shared-dma-pool&quot;&lt;/span&gt;;
+        gpu_mem: gpu_region@0 {
+            compatible = &quot;shared-dma-pool&quot;;
             reusable;
-            alloc-ranges = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x80000000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x10000000&lt;/span&gt;&amp;gt;;
-            alignment = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x400000&lt;/span&gt;&amp;gt;;
-            &lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt; = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x800000&lt;/span&gt;&amp;gt;;
+            alloc-ranges = &amp;lt;0x0 0x80000000 0x0 0x10000000&amp;gt;;
+            alignment = &amp;lt;0 0x400000&amp;gt;;
+            size = &amp;lt;0 0x800000&amp;gt;;
         };
     };
 
     aliases {
-        &lt;span class=&quot;hljs-comment&quot;&gt;/* smdtty devices */&lt;/span&gt;
+        /* smdtty devices */
         smd1 = &amp;amp;smdtty_apps_fm;
         smd2 = &amp;amp;smdtty_apps_riva_bt_acl;
         smd3 = &amp;amp;smdtty_apps_riva_bt_cmd;
@@ -1216,8 +1416,8 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
         smd11 = &amp;amp;smdtty_data11;
         smd21 = &amp;amp;smdtty_data21;
         smd36 = &amp;amp;smdtty_loopback;
-        sdhc1 = &amp;amp;sdhc_1; &lt;span class=&quot;hljs-comment&quot;&gt;/* SDC1 eMMC slot */&lt;/span&gt;
-        sdhc2 = &amp;amp;sdhc_2; &lt;span class=&quot;hljs-comment&quot;&gt;/* SDC2 for SD card */&lt;/span&gt;
+        sdhc1 = &amp;amp;sdhc_1; /* SDC1 eMMC slot */
+        sdhc2 = &amp;amp;sdhc_2; /* SDC2 for SD card */
         i2c1 = &amp;amp;i2c_1;
         i2c2 = &amp;amp;i2c_2;
         i2c3 = &amp;amp;i2c_3;
@@ -1229,40 +1429,40 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 
 };
 由上面的例子看出Device Tree有一下特点：
-&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;节点node
-    &lt;span class=&quot;hljs-number&quot;&gt;1.1&lt;/span&gt;每个node可以包含sub node和property/value；
-    &lt;span class=&quot;hljs-number&quot;&gt;1.2&lt;/span&gt;每个DTS都只有一个ROOT node；
-    &lt;span class=&quot;hljs-number&quot;&gt;1.3&lt;/span&gt;一个node可以有多个sub node，但只能有一个&lt;span class=&quot;hljs-keyword&quot;&gt;parent&lt;/span&gt; node；
-    &lt;span class=&quot;hljs-number&quot;&gt;1.4&lt;/span&gt;一个node可以包含多个property/value描述该node的具体信息；
-    &lt;span class=&quot;hljs-number&quot;&gt;1.5&lt;/span&gt;每个node用节点名字（node name）标识，节点名字的格式是node-name&lt;span class=&quot;hljs-variable&quot;&gt;@unit&lt;/span&gt;-address。如果该node没有reg属性（后面会描述这个property），那么该节点名字中必须不能包括&lt;span class=&quot;hljs-variable&quot;&gt;@和&lt;/span&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;unit&lt;/span&gt;-address。
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;属性/值property/value
-    &lt;span class=&quot;hljs-number&quot;&gt;2.1&lt;/span&gt;一般属性：
+1.节点node
+    1.1每个node可以包含sub node和property/value；
+    1.2每个DTS都只有一个ROOT node；
+    1.3一个node可以有多个sub node，但只能有一个parent node；
+    1.4一个node可以包含多个property/value描述该node的具体信息；
+    1.5每个node用节点名字（node name）标识，节点名字的格式是node-name@unit-address。如果该node没有reg属性（后面会描述这个property），那么该节点名字中必须不能包括@和unit-address。
+2.属性/值property/value
+    2.1一般属性：
     属性值表示了该设备节点的具体特性，它的值是多样性的：
-    &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)可能为空，即没有值的定义；
-    &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)可能为&lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;bit或&lt;span class=&quot;hljs-number&quot;&gt;64&lt;/span&gt;bit整数值(#&lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt;-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;&amp;gt;)或者数组(reg = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x86c00000&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x0&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x5600000&lt;/span&gt;&amp;gt;)；
-    &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;）可能为&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;(label = &lt;span class=&quot;hljs-string&quot;&gt;&quot;cont_splash_mem&quot;&lt;/span&gt;)或&lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt; list(compatible = &lt;span class=&quot;hljs-string&quot;&gt;&quot;qcom,msm8953&quot;&lt;/span&gt;)；
-    &lt;span class=&quot;hljs-number&quot;&gt;2.2&lt;/span&gt;特殊属性：
-    #address-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&amp;gt;;
-    #&lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt;-cells = &amp;lt;&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;&amp;gt;;
-    #类似number，#address-cells表示子节点中reg中的地址元素需要用多少个&lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;bit值来表示，#&lt;span class=&quot;hljs-keyword&quot;&gt;size&lt;/span&gt;-cells表示子节点中reg中的大小元素需要用多少个&lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;bit值来表示。`&lt;/pre&gt;
+    1)可能为空，即没有值的定义；
+    2)可能为32bit或64bit整数值(#size-cells = &amp;lt;2&amp;gt;)或者数组(reg = &amp;lt;0x0 0x86c00000 0x0 0x5600000&amp;gt;)；
+    3）可能为string(label = &quot;cont_splash_mem&quot;)或string list(compatible = &quot;qcom,msm8953&quot;)；
+    2.2特殊属性：
+    #address-cells = &amp;lt;1&amp;gt;;
+    #size-cells = &amp;lt;0&amp;gt;;
+    #类似number，#address-cells表示子节点中reg中的地址元素需要用多少个32bit值来表示，#size-cells表示子节点中reg中的大小元素需要用多少个32bit值来表示。`&lt;/pre&gt;
 
 3.Device Tree source file语法
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;节点定义：
-    [label:] node-&lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;[@unit-address] { 
+&lt;pre class=&quot;prettyprint&quot;&gt;`1.节点定义：
+    [label:] node-name[@unit-address] { 
        [properties definitions];
        [child nodes];
     };
-&lt;span class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;节点引用：
-    &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)直接引用：绝对路径，/node-&lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;/node-&lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;/node-&lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;-N；
-    &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)别名引用：所有别名被定义在节点aliases中；
-    &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;)lable引用：&amp;amp;lable；
-&lt;span class=&quot;hljs-number&quot;&gt;3.&lt;/span&gt;属性定义：
-    &lt;span class=&quot;hljs-keyword&quot;&gt;property&lt;/span&gt; ＝ value;
+2.节点引用：
+    1)直接引用：绝对路径，/node-name-1/node-name-2/node-name-N；
+    2)别名引用：所有别名被定义在节点aliases中；
+    3)lable引用：&amp;amp;lable；
+3.属性定义：
+    property ＝ value;
     再次注意value的三种方式：
-    &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)&lt;span class=&quot;hljs-number&quot;&gt;32&lt;/span&gt;bit unsigned integers：&lt;span class=&quot;hljs-comment&quot;&gt;#size-cells = &amp;lt;2&amp;gt;;&lt;/span&gt;
-    &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;)binary data：binary-&lt;span class=&quot;hljs-keyword&quot;&gt;property&lt;/span&gt; = [&lt;span class=&quot;hljs-number&quot;&gt;0x01&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x23&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x45&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0x67&lt;/span&gt;];
-    &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;)&lt;span class=&quot;hljs-type&quot;&gt;string&lt;/span&gt;/&lt;span class=&quot;hljs-type&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;hljs-type&quot;&gt;list&lt;/span&gt;：device_type = &lt;span class=&quot;hljs-string&quot;&gt;&quot;memory&quot;&lt;/span&gt;;
+    1)32bit unsigned integers：#size-cells = &amp;lt;2&amp;gt;;
+    2)binary data：binary-property = [0x01 0x23 0x45 0x67];
+    3)string/string list：device_type = &quot;memory&quot;;
 
         &lt;div&gt;
             作者：WEINILUO 发表于2016/8/26 14:15:06 [原文链接](http://blog.csdn.net/weiniluo/article/details/52326801)
@@ -1273,17 +1473,18 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/08/26/原-Device-Tree-入门/" class="archive-article-date">
-  	<time datetime="2016-08-26T18:15:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-26</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1293,10 +1494,32 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-c-差缺补漏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/25/原-c-差缺补漏/" class="article-date">
+      <time datetime="2016-08-25T14:08:29.000Z" itemprop="datePublished">2016-08-25</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -1311,50 +1534,52 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>1.类型转换 </p>
 <p>1.1自动转换</p>
-<pre><code>高        &lt;span class=&quot;hljs-keyword&quot;&gt;double&lt;/span&gt;    ←←    &lt;span class=&quot;hljs-keyword&quot;&gt;float&lt;/span&gt;
+<pre><code>高        double    ←←    float
 ↑          ↑             
-↑         &lt;span class=&quot;hljs-keyword&quot;&gt;long&lt;/span&gt;     
+↑         long     
 ↑          ↑
-↑        &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt;
+↑        unsigned
 ↑          ↑
-低         &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;      ←←    &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;,&lt;span class=&quot;hljs-keyword&quot;&gt;short&lt;/span&gt;`&lt;/pre&gt;
+低         int      ←←    char,short`&lt;/pre&gt;
 
 规则：在进行自动类型转换的时候，如果原来的数是无符号数，那么在扩展的时候，高位填充的是0；如果是有符号数，那么高位填充的时符号位！这一点有点类似于“&amp;gt;&amp;gt;”操作符，当无符号数右移的时候，高位填充的是0；有符号数右移的时候，高位填充的是符号位。
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`  &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;hljs-preprocessor&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;
-  &lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; main()
-  &lt;span class=&quot;hljs-number&quot;&gt;4&lt;/span&gt; {
-  &lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;     &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; v16s;
-  &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;     &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt; v16u;
-  &lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;     &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; v32s;
-  &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;     &lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt; v32u;
-  &lt;span class=&quot;hljs-number&quot;&gt;9&lt;/span&gt;     v16s=&lt;span class=&quot;hljs-number&quot;&gt;0xfb&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;     v16u=(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;11&lt;/span&gt;     v32s=(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;     v32u=(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;13&lt;/span&gt;     &lt;span class=&quot;hljs-built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;v16u:%x,v32s:%x,v32u:%x\n&quot;&lt;/span&gt;,v16u,v32s,v32u);
- &lt;span class=&quot;hljs-number&quot;&gt;14&lt;/span&gt;     v16s=&lt;span class=&quot;hljs-number&quot;&gt;0x0b&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;15&lt;/span&gt;     v32s=(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;16&lt;/span&gt;     v32u=(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;17&lt;/span&gt;     &lt;span class=&quot;hljs-built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;v32s:%x,v32u:%x\n&quot;&lt;/span&gt;,v32s,v32u);
- &lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt;     v32s=&lt;span class=&quot;hljs-number&quot;&gt;0xfffffffb&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;19&lt;/span&gt;     v16s=(&lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;)v32s;
- &lt;span class=&quot;hljs-number&quot;&gt;20&lt;/span&gt;     v16u=(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;)v32s;
- &lt;span class=&quot;hljs-number&quot;&gt;21&lt;/span&gt;     &lt;span class=&quot;hljs-built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;v16s:%x,v16u:%x\n&quot;&lt;/span&gt;,v16s,v16u);
- &lt;span class=&quot;hljs-number&quot;&gt;22&lt;/span&gt;     v16s=&lt;span class=&quot;hljs-number&quot;&gt;0xfb&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;23&lt;/span&gt;     v16u=&lt;span class=&quot;hljs-number&quot;&gt;0xfb&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;24&lt;/span&gt;     v32s=(&lt;span class=&quot;hljs-keyword&quot;&gt;int&lt;/span&gt;)v16s;
- &lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt;     v32u=(&lt;span class=&quot;hljs-keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;char&lt;/span&gt;)v16u;
- &lt;span class=&quot;hljs-number&quot;&gt;26&lt;/span&gt;     &lt;span class=&quot;hljs-built_in&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;v32s:%x,v32u:%x\n&quot;&lt;/span&gt;,v32s,v32u);
- &lt;span class=&quot;hljs-number&quot;&gt;27&lt;/span&gt;
- &lt;span class=&quot;hljs-number&quot;&gt;28&lt;/span&gt;     &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
- &lt;span class=&quot;hljs-number&quot;&gt;29&lt;/span&gt; }
+&lt;pre class=&quot;prettyprint&quot;&gt;`  1 #include &amp;lt;stdio.h&amp;gt;
+  2
+  3 int main()
+  4 {
+  5     char v16s;
+  6     unsigned char v16u;
+  7     int v32s;
+  8     unsigned int v32u;
+  9     v16s=0xfb;
+ 10     v16u=(unsigned char)v16s;
+ 11     v32s=(int)v16s;
+ 12     v32u=(unsigned int)v16s;
+ 13     printf(&quot;v16u:%x,v32s:%x,v32u:%x\n&quot;,v16u,v32s,v32u);
+ 14     v16s=0x0b;
+ 15     v32s=(int)v16s;
+ 16     v32u=(unsigned int)v16s;
+ 17     printf(&quot;v32s:%x,v32u:%x\n&quot;,v32s,v32u);
+ 18     v32s=0xfffffffb;
+ 19     v16s=(char)v32s;
+ 20     v16u=(unsigned char)v32s;
+ 21     printf(&quot;v16s:%x,v16u:%x\n&quot;,v16s,v16u);
+ 22     v16s=0xfb;
+ 23     v16u=0xfb;
+ 24     v32s=(int)v16s;
+ 25     v32u=(unsigned char)v16u;
+ 26     printf(&quot;v32s:%x,v32u:%x\n&quot;,v32s,v32u);
+ 27
+ 28     return 0;
+ 29 }
 
         &lt;div&gt;
             作者：WEINILUO 发表于2016/8/25 10:08:29 [原文链接](http://blog.csdn.net/weiniluo/article/details/52303134)
@@ -1365,17 +1590,18 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/08/25/原-c-差缺补漏/" class="archive-article-date">
-  	<time datetime="2016-08-25T14:08:29.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-25</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1385,10 +1611,32 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-ubuntu-定时任务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/24/原-ubuntu-定时任务/" class="article-date">
+      <time datetime="2016-08-24T17:58:32.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -1403,42 +1651,44 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>1.编辑/etc/crontab文件</p>
-<pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;# /etc/crontab: system-wide crontab&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;# Unlike any other crontab you don&apos;t have to run the `crontab&apos;&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;# command to install the new version when you edit this file&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;# and files in /etc/cron.d. These files also have username fields,&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;# that none of the other crontabs do.&lt;/span&gt;
+<pre><code># /etc/crontab: system-wide crontab
+# Unlike any other crontab you don&apos;t have to run the `crontab&apos;
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
 
-&lt;span class=&quot;hljs-constant&quot;&gt;SHELL&lt;/span&gt;=&lt;span class=&quot;hljs-regexp&quot;&gt;/bin/sh&lt;/span&gt;
-&lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;=&lt;span class=&quot;hljs-regexp&quot;&gt;/usr/local&lt;/span&gt;&lt;span class=&quot;hljs-regexp&quot;&gt;/sbin:/usr&lt;/span&gt;&lt;span class=&quot;hljs-regexp&quot;&gt;/local/bin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/sbin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/bin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/usr/sbin&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:/usr/bin&lt;/span&gt;
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-&lt;span class=&quot;hljs-comment&quot;&gt;# m h dom mon dow user  command&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;17&lt;/span&gt; *    * * *   root    cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.hourly
-&lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.daily )
-&lt;span class=&quot;hljs-number&quot;&gt;47&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * &lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.weekly )
-&lt;span class=&quot;hljs-number&quot;&gt;52&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.monthly )
-&lt;span class=&quot;hljs-comment&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;6&lt;/span&gt;    * * *   zhanglei run-parts /home/zhanglei/zlwork/script/
+# m h dom mon dow user  command
+17 *    * * *   root    cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;amp;&amp;amp; run-parts --report /etc/cron.monthly )
+#
+10 6    * * *   zhanglei run-parts /home/zhanglei/zlwork/script/
 
 注：
-&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;.注释
+1.注释
     m h dom mon dow user  command
-    m &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;59&lt;/span&gt;的数值，*表示任何数值都执行
-    h &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;23&lt;/span&gt;的数值，*表示任何数值都执行
-    dom &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;31&lt;/span&gt;的数值，*表示任何数值都执行
-    mon &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;的数值，*表示任何数值都执行
-    dow &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;-&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;的数值，*表示任何数值都执行,&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;/&lt;span class=&quot;hljs-number&quot;&gt;7&lt;/span&gt;代表周日
+    m 0-59的数值，*表示任何数值都执行
+    h 0-23的数值，*表示任何数值都执行
+    dom 1-31的数值，*表示任何数值都执行
+    mon 1-12的数值，*表示任何数值都执行
+    dow 0-7的数值，*表示任何数值都执行,0/7代表周日
     user 表示以某个用户身份执行命令
     command 需要执行的脚本或命令（直接为命令或脚本文件或者run-parts 脚本文件目录）
 
-&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;.或者用crontab -e 为当前用户创建cron任务   
-&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;.脚本文件注意&lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;引用
+2.或者用crontab -e 为当前用户创建cron任务   
+3.脚本文件注意PATH引用
     由于cron是系统进程，脚本的执行经常会受到环境变量的影响，因此需要格外小心，例如我的环境变量：
-    export &lt;span class=&quot;hljs-constant&quot;&gt;PATH&lt;/span&gt;=~&lt;span class=&quot;hljs-regexp&quot;&gt;/bin:$PATH:/sbin&lt;/span&gt;
+    export PATH=~/bin:$PATH:/sbin
 </code></pre><p>2.service cron restart</p>
 <p>参考文章： </p>
 <p><a href="http://blog.csdn.net/liu414226580/article/details/16339935" target="_blank" rel="external">http://blog.csdn.net/liu414226580/article/details/16339935</a> </p>
@@ -1452,17 +1702,18 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/08/24/原-ubuntu-定时任务/" class="archive-article-date">
-  	<time datetime="2016-08-24T17:58:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-24</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1472,10 +1723,32 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-list-for-each-entry深入理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/03/原-list-for-each-entry深入理解/" class="article-date">
+      <time datetime="2016-08-03T18:49:58.000Z" itemprop="datePublished">2016-08-03</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -1490,45 +1763,47 @@ kernel/arch/arm/boot/dts/qcom/skeleton.dtsi:
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>在内核编程中经常会遇到list_for_each_entry(pos, head, member)，今天深入分析一下list_for_each_entry在内核中是如何定义的。 </p>
 <p>list_for_each_entry主要作用是遍历给定类型的链表，被定义在include/linux/list.h中：</p>
 <pre><code>/**
- * list_for_each_entry  -   iterate over list &lt;span class=&quot;hljs-keyword&quot;&gt;of&lt;/span&gt; given type
- * &lt;span class=&quot;hljs-property&quot;&gt;@pos&lt;/span&gt;:    the type * to use as a &lt;span class=&quot;hljs-keyword&quot;&gt;loop&lt;/span&gt; cursor.
- * &lt;span class=&quot;hljs-property&quot;&gt;@head&lt;/span&gt;:   the head &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; your list.
- * &lt;span class=&quot;hljs-property&quot;&gt;@member&lt;/span&gt;: the name &lt;span class=&quot;hljs-keyword&quot;&gt;of&lt;/span&gt; the list_struct within the struct.
+ * list_for_each_entry  -   iterate over list of given type
+ * @pos:    the type * to use as a loop cursor.
+ * @head:   the head for your list.
+ * @member: the name of the list_struct within the struct.
  */
-&lt;span class=&quot;hljs-comment&quot;&gt;#define list_for_each_entry(pos, head, member)              \&lt;/span&gt;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-params&quot;&gt;(pos = list_entry((head)-&amp;gt;next, &lt;span class=&quot;hljs-keyword&quot;&gt;typeof&lt;/span&gt;(*pos), member);  \
+#define list_for_each_entry(pos, head, member)              \
+    for (pos = list_entry((head)-&amp;gt;next, typeof(*pos), member);  \
          &amp;amp;pos-&amp;gt;member != (head);    \
-         pos = list_entry(pos-&amp;gt;member.next, &lt;span class=&quot;hljs-keyword&quot;&gt;typeof&lt;/span&gt;(*pos), member))&lt;/span&gt;&lt;/span&gt;`&lt;/pre&gt;
+         pos = list_entry(pos-&amp;gt;member.next, typeof(*pos), member))`
 
 接着需要理解list_entry，list_entry的作用是获取条目的结构类型，同样被定义在include/linux/list.h中：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-javadoc&quot;&gt;/**
+ass=&quot;prettyprint&quot;&gt;`/**
  * list_entry - get the struct for this entry
- * &lt;span class=&quot;hljs-javadoctag&quot;&gt;@ptr&lt;/span&gt;:    the &amp;amp;struct list_head pointer.
- * &lt;span class=&quot;hljs-javadoctag&quot;&gt;@type&lt;/span&gt;:   the type of the struct this is embedded in.
- * &lt;span class=&quot;hljs-javadoctag&quot;&gt;@member&lt;/span&gt;: the name of the list_struct within the struct.
- */&lt;/span&gt;
-#define list_entry(ptr, &lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;, member) \
-    container_of(ptr, &lt;span class=&quot;hljs-keyword&quot;&gt;type&lt;/span&gt;, member)`&lt;/pre&gt;
+ * @ptr:    the &amp;amp;struct list_head pointer.
+ * @type:   the type of the struct this is embedded in.
+ * @member: the name of the list_struct within the struct.
+ */
+#define list_entry(ptr, type, member) \
+    container_of(ptr, type, member)`
 
 container_of作用是通过结构体成员变量的地址和结构体成员变量名以及结构体类型获取该结构体变量的地址，被定义在include/linux/kernel.h中：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`/**
- * container_of - cast a member &lt;span class=&quot;hljs-keyword&quot;&gt;of&lt;/span&gt; a structure out to the containing structure
- * &lt;span class=&quot;hljs-property&quot;&gt;@ptr&lt;/span&gt;:    the pointer to the member.
- * &lt;span class=&quot;hljs-property&quot;&gt;@type&lt;/span&gt;:   the type &lt;span class=&quot;hljs-keyword&quot;&gt;of&lt;/span&gt; the container struct &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;is&lt;/span&gt; embedded &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt;.
- * &lt;span class=&quot;hljs-property&quot;&gt;@member&lt;/span&gt;: the name &lt;span class=&quot;hljs-keyword&quot;&gt;of&lt;/span&gt; the member within the struct.
+ass=&quot;prettyprint&quot;&gt;`/**
+ * container_of - cast a member of a structure out to the containing structure
+ * @ptr:    the pointer to the member.
+ * @type:   the type of the container struct this is embedded in.
+ * @member: the name of the member within the struct.
  *
  */
-&lt;span class=&quot;hljs-comment&quot;&gt;#define container_of(ptr, type, member) ({          \&lt;/span&gt;
-    &lt;span class=&quot;hljs-reserved&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-params&quot;&gt;( ((type *)&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;)-&amp;gt;member )&lt;/span&gt; *&lt;span class=&quot;hljs-title&quot;&gt;__mptr&lt;/span&gt; = &lt;span class=&quot;hljs-params&quot;&gt;(ptr)&lt;/span&gt;;    \
-    &lt;span class=&quot;hljs-params&quot;&gt;(type *)( (char *)__mptr - offsetof(type,member) )&lt;/span&gt;;})&lt;/span&gt;`&lt;/pre&gt;
+#define container_of(ptr, type, member) ({          \
+    const typeof( ((type *)0)-&amp;gt;member ) *__mptr = (ptr);    \
+    (type *)( (char *)__mptr - offsetof(type,member) );})`
 
 const typeof( ((type *)0)-&amp;gt;member ) *__mptr = (ptr); 
 
@@ -1542,32 +1817,31 @@ typeof是c    语言的一个新拓展，有多重用法，主要用于得到其
 
 offsetof(type, member)的作用是返回member在type中的偏移，其在include/linux/stddef.h中的定义如下：
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#ifdef __compiler_offsetof&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#define offsetof(TYPE,MEMBER) __compiler_offsetof(TYPE,MEMBER)&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#else&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#define offsetof(TYPE, MEMBER) ((size_t) &amp;amp;((TYPE *)0)-&amp;gt;MEMBER)&lt;/span&gt;
-&lt;span class=&quot;hljs-preprocessor&quot;&gt;#endif&lt;/span&gt;
+ass=&quot;prettyprint&quot;&gt;`#ifdef __compiler_offsetof
+#define offsetof(TYPE,MEMBER) __compiler_offsetof(TYPE,MEMBER)
+#else
+#define offsetof(TYPE, MEMBER) ((size_t) &amp;amp;((TYPE *)0)-&amp;gt;MEMBER)
+#endif
 </code></pre><p>用实际的结构体成员变量的地址减去成员变量在结构体中的偏移地址，自然就得到该结构体变量的起始地址，最终得到(type*)类型的指针。</p>
-<pre><code>&lt;div&gt;
-    作者：WEINILUO 发表于2016/8/3 14:49:58 [原文链接](http://blog.csdn.net/weiniluo/article/details/52103145)
-&lt;/div&gt;
-&lt;div&gt;
+<pre><code>    作者：WEINILUO 发表于2016/8/3 14:49:58 [原文链接](http://blog.csdn.net/weiniluo/article/details/52103145)
+
+
 阅读：114 评论：0 [查看评论](http://blog.csdn.net/weiniluo/article/details/52103145#comments)
-&lt;/div&gt;
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/08/03/原-list-for-each-entry深入理解/" class="archive-article-date">
-  	<time datetime="2016-08-03T18:49:58.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-03</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1577,10 +1851,32 @@ offsetof(type, member)的作用是返回member在type中的偏移，其在includ
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
     <article id="post-原-SSH端口转发与内网穿透" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/03/原-SSH端口转发与内网穿透/" class="article-date">
+      <time datetime="2016-08-03T17:54:33.000Z" itemprop="datePublished">2016-08-03</time>
+</a>
+    </div>
+  
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -1595,21 +1891,23 @@ offsetof(type, member)的作用是返回member在type中的偏移，其在includ
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>1.内网系统配置：</p>
-<pre><code>localhost&lt;span class=&quot;hljs-variable&quot;&gt;$sudo&lt;/span&gt; ssh -&lt;span class=&quot;hljs-constant&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:port_vps&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;hljs-number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;:port_local&lt;/span&gt; username&lt;span class=&quot;hljs-variable&quot;&gt;@vps_ip&lt;/span&gt; -p vps_ssh_port
-&lt;span class=&quot;hljs-symbol&quot;&gt;port_vps:&lt;/span&gt;vps端的转发端口
+<pre><code>localhost$sudo ssh -R 0.0.0.0:port_vps:127.0.0.1:port_local username@vps_ip -p vps_ssh_port
+port_vps:vps端的转发端口
 port_local：本地ssh登录端口
 vps_ssh_port：vps的ssh登录端口
 `&lt;/pre&gt;
 
 2.vps端配置
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`vps_host&lt;span class=&quot;hljs-variable&quot;&gt;$vi&lt;/span&gt; /etc/ssh/ssh_config
+&lt;pre class=&quot;prettyprint&quot;&gt;`vps_host$vi /etc/ssh/ssh_config
 +  GatewayPorts yes
-vps_host&lt;span class=&quot;hljs-variable&quot;&gt;$service&lt;/span&gt; ssh restart
+vps_host$service ssh restart
 </code></pre><p>3.帮助 </p>
 <p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/</a></p>
 <pre><code>&lt;div&gt;
@@ -1621,17 +1919,18 @@ vps_host&lt;span class=&quot;hljs-variable&quot;&gt;$service&lt;/span&gt; ssh re
 </code></pre>
       
     </div>
+    
     <div class="article-info article-info-index">
-      
-      <a href="/2016/08/03/原-SSH端口转发与内网穿透/" class="archive-article-date">
-  	<time datetime="2016-08-03T17:54:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-03</time>
-</a>
       
       
 
+      
+      
       <div class="clearfix"></div>
     </div>
+    
   </div>
+  
 </article>
 
 
@@ -1641,7 +1940,22 @@ vps_host&lt;span class=&quot;hljs-variable&quot;&gt;$service&lt;/span&gt; ssh re
 
 
 
-
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
 
   
   
@@ -1649,153 +1963,107 @@ vps_host&lt;span class=&quot;hljs-variable&quot;&gt;$service&lt;/span&gt; ssh re
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
-
-
-      </div>
+</div>
       <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 feison
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 feison
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
     </div>
-  </div>
 </footer>
     </div>
+    
     <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: true,
-		root: "/",
-		innerArchive: true
-	}
+        var yiliaConfig = {
+            fancybox: false,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+        }
+    </script>
+
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
 </script>
 
-<script src="/./main.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
-    
-<div class="tools-col">
-  <ul class="btn-wrap">
-    
-      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
-    
-    
-      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
-    
-    
-      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
-    
-    
-      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
-    
-  </ul>
-  <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all chose">
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-tag">
-    			<div class="widget tagcloud" id="js-tagcloud">
-    				
-    			</div>
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-friends">
-  		
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-me">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">你不得不拼了命，才有可能跳出呱呱坠地时的“原生阶层”，仅仅是有可能！</div>
-  	  	
-    	</section>
-    
-  </div>
-  
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
 
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
 </html>
